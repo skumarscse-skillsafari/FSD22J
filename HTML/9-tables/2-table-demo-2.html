@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Table additional attributes">
+    <title>Table additional attributes</title>
+</head>
+
+<body>
+    <h1>Table Example:</h1>
+    <h2>Employee Table</h2>
+    <table border="1">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td>Tester</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>BBBB</td>
+            <td>25</td>
+            <td>Project Manager</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>30</td>
+            <td>Developer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DDDD</td>
+            <td>35</td>
+            <td>Sr. Developer</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Table with CellSpacing</h2>
+    <!-- Cell => Each and Every content present in the table on the "Cell" -->
+    <!--  Add space between the cells => cellspacing -->
+    <table border="1" cellspacing="20px">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td>Tester</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>BBBB</td>
+            <td>25</td>
+            <td>Project Manager</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>30</td>
+            <td>Developer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DDDD</td>
+            <td>35</td>
+            <td>Sr. Developer</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Table with CellPadding</h2>
+    <!-- CellPadding => Adds space inside the Cell -->
+    <table border="1" cellpadding="10px">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td>Tester</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>BBBB</td>
+            <td>25</td>
+            <td>Project Manager</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>30</td>
+            <td>Developer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DDDD</td>
+            <td>35</td>
+            <td>Sr. Developer</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Table with Width</h2>
+    <table border="1" width="50%">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td>Tester</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>BBBB</td>
+            <td>25</td>
+            <td>Project Manager</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>30</td>
+            <td>Developer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DDDD</td>
+            <td>35</td>
+            <td>Sr. Developer</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Table with colspan</h2>
+    <!-- Merge the columns -->
+    <table border="1" width="50%">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td>Tester</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td colspan="3">BBBB / 25 / Project Manager</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>30</td>
+            <td>Developer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DDDD</td>
+            <td>35</td>
+            <td>Sr. Developer</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Table with RowSpan</h2>
+    <!-- Merge the Rows -->
+    <table border="1" width="50%">
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>AAAA</td>
+            <td>20</td>
+            <td rowspan="4">Sr. Software Developer</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>BBBB</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>CCCC</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DDDD</td>
+            <td>35</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
