@@ -21,35 +21,39 @@
                 => <input type="radio/checkbox">, <select></select>
         3. Buttons => Submit, Cancel, Reset
      -->
-    <form action="#" method="POST">
+    <form action="./2-response.html" method="GET">
         <fieldset>
             <legend>Direct Response Fields:</legend>
             <table>
                 <tr>
                     <td>Enter Your Name:</td>
-                    <td><input type="text" name="username" id="username" placeholder="Enter your name"></td>
+                    <td><input type="text" name="username" id="username" placeholder="Enter your name"
+                            autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Enter Your Age:</td>
-                    <td><input type="number" name="age" id="age" placeholder="Enter your age"></td>
+                    <td><input type="number" name="age" id="age" placeholder="Enter your age" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Enter Your Email:</td>
-                    <td><input type="email" name="email" id="email" placeholder="Enter your Email"></td>
+                    <td><input type="email" name="email" id="email" placeholder="Enter your Email" autocomplete="off">
+                    </td>
                 </tr>
                 <tr>
                     <td>Enter Password:</td>
-                    <td><input type="password" name="password" id="password" placeholder="Enter Password"></td>
+                    <td><input type="password" name="password" id="password" placeholder="Enter Password"
+                            autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Confirm Password:</td>
                     <td><input type="password" name="confirm-password" id="confirm-password"
-                            placeholder="Confirm Password">
+                            placeholder="Confirm Password" autocomplete="off">
                     </td>
                 </tr>
                 <tr>
                     <td>Enter Phone number:</td>
-                    <td><input type="number" name="phone-number" id="phone-number" placeholder="Enter mobile number">
+                    <td><input type="number" name="phone-number" id="phone-number" placeholder="Enter mobile number"
+                            autocomplete="off">
                     </td>
                 </tr>
                 <tr>
@@ -58,8 +62,8 @@
                 </tr>
                 <tr>
                     <td>Enter Address:</td>
-                    <td><textarea name="address" id="address" cols="30" rows="5"
-                            placeholder="Enter Address..."></textarea>
+                    <td><textarea name="address" id="address" cols="30" rows="5" placeholder="Enter Address..."
+                            autocomplete="off"></textarea>
                     </td>
                 </tr>
             </table>

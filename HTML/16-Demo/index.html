@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="HTML - Layout - Example">
+    <title>HTML - Layout Example</title>
+</head>
+
+<body id="top">
+    <!-- 
+        <header>...</header>
+        <nav>...</nav>
+        <section>...<section>
+        <footer>...<footer>
+        <aside>...</aside> (optional)
+     -->
+    <header>
+        <h1>This page is to demonstrate HTML Layout</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim corporis corrupti beatae error. Tempore iste
+            ab quae quaerat animi neque.</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <section id="about">
+        <h2>About Section</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nesciunt alias a aliquid quibusdam expedita
+            earum minus modi ut, labore quaerat explicabo accusamus error praesentium aperiam molestias at. Aspernatur
+            autem veritatis accusantium qui libero, praesentium excepturi cupiditate sit dolores impedit voluptate animi
+            quae voluptatum magnam maiores assumenda molestias recusandae voluptatibus.</p>
+        <img src="./assets/images/image-one.jpg" alt="image-one" height="250" width="250">
+    </section>
+    <hr>
+    <section id="projects">
+        <h2>Projects Section</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga culpa reprehenderit porro laborum esse, sint
+            quia magnam inventore molestias sunt magni cupiditate eos hic, eaque temporibus iure! Ad ipsum unde magnam
+            expedita facere earum molestias praesentium sapiente saepe soluta deserunt, quam accusamus assumenda?
+            Mollitia, reiciendis. Eos in ab deserunt accusantium?</p>
+        <ul>
+            <li>To-Do App</li>
+            <li>PostTracker App</li>
+            <li>NotesTaking App</li>
+        </ul>
+        <table>
+            <tr>
+                <td><img src="./assets/images/image-two.jpg" alt="image" height="300" width="300"></td>
+                <td><video controls height="300" width="300">
+                        <source src="./assets/videos/videoplayback.mp4" type="video/mp4">
+                    </video></td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+    <section id="education">
+        <h2>Education Section</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad dignissimos sapiente, dolorum quis ipsam vero
+            quasi in beatae velit excepturi perspiciatis mollitia quibusdam ducimus accusantium nobis fuga distinctio
+            molestiae pariatur! Similique eius vel iusto suscipit, harum enim ex molestias necessitatibus voluptatibus
+            perferendis exercitationem quam hic voluptate assumenda. Nobis, in minus.</p>
+        <ul>
+            <li>B.E - CSE</li>
+            <li>M.E - CSE</li>
+        </ul>
+        <div>
+            <audio controls>
+                <source src="./assets/audios/shape-of-you.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </section>
+    <hr>
+    <section id="contact">
+        <h2>Contact Section</h2>
+        <p>Feel free to contact...</p>
+        <form action="#">
+            <table>
+                <tr>
+                    <td><label for="fullName">Enter your Fullname:</label></td>
+                    <td><input type="text" name="fullName" id="fullName" placeholder="Enter fullname"
+                            autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Enter your Email:</label></td>
+                    <td><input type="email" name="email" id="email" placeholder="Enter email" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Submit"></td>
+                    <td><input type="reset" value="Reset"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        <hr>
+        <a href="#top">Back to Top</a>
+        <p>All rights reserved. SkillSafari &copy; 2023.</p>
+    </footer>
+</body>
+
+</html>
