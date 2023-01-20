@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Attribute Selector">
+    <title>CSS - Attribute Selector</title>
+    <style>
+        /* 
+        CSS - Attribute Selector
+        Syntax
+        // Ex: 1
+        selector[attributeName] {
+            propertyName: propertyValue;
+        }
+
+        // Ex: 2
+        selector[attributeName="attributeValue"] {
+            propertyName: propertyValue;
+        }
+         */
+        p[class] {
+            color: brown;
+        }
+
+        p[id] {
+            color: darksalmon;
+        }
+
+        p[class="text"] {
+            text-decoration: underline;
+        }
+
+        /* applies "aqua" color to all the "id" attribute which has value starts with "si" */
+        p[id^="si"] {
+            color: aqua;
+        }
+
+        p[class^="color"] {
+            color: pink;
+        }
+
+        /* selects all the "class" attribute which has "ee" in anyone place of the "value" */
+        p[class*="ee"] {
+            color: crimson;
+        }
+
+        /* selects all the "class" attribute value ends with "d" */
+        p[class$="e"] {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS - Attribute Selector</h1>
+    <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, quod!</p>
+    <p id="sample">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, excepturi.</p>
+    <hr>
+    <p class="color-blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, laudantium.</p>
+    <hr>
+    <p class="color-red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, sequi.</p>
+    <hr>
+    <p class="color-green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, dolorem!</p>
+    <hr>
+    <p id="simple" class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, asperiores.</p>
+</body>
+
+</html>

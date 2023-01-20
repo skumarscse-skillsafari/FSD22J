@@ -20,6 +20,21 @@
         #paraOne {
             color: red;
         }
+
+        #paraTwo,
+        #paraThree {
+            color: green;
+        }
+
+        h1,
+        #paraThree {
+            color: indigo;
+        }
+
+        /* Specificity */
+        h2#paraThree {
+            color: red;
+        }
     </style>
 </head>
 
@@ -30,6 +45,7 @@
     <p id="paraTwo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, expedita.</p>
     <h3>Heading Three</h3>
     <p id="paraThree">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, magni?</p>
+    <h2 id="paraThree">This is a heading</h2>
 </body>
 
 </html>

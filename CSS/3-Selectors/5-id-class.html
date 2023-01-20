@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - ID and Class Selector">
+    <title>CSS - ID and Class Selector</title>
+    <style>
+        #heading {
+            font-size: 16px;
+        }
+
+        .paraClass {
+            color: brown;
+        }
+
+        /* "id" has more preference than "class" */
+        p#paraID {
+            color: red;
+        }
+
+        p.paraClass {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">CSS - ID and Class Selector</h1>
+    <p id="paraID" class="paraClass">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, qui!</p>
+</body>
+
+</html>
