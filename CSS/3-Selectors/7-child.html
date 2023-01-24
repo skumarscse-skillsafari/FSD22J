@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Selectors : Child selector">
+    <title>CSS - Selectors : Child selector</title>
+    <style>
+        /* 
+            Combinators:
+            // Two or morethan two elements
+            Syntax
+            parentElement > childElement {
+                propertyName: propertyValue;
+            }
+            All the "childElements" present inside the "parentElement" gets the style of the css properties defined
+         */
+        .divOne>h2 {
+            color: blue;
+        }
+
+        /* h2 => is a child of the parent element => .divOne, got the color: blue */
+    </style>
+</head>
+
+<body>
+    <h1>CSS - Selectors : Child selector</h1>
+    <div class="divOne">
+        <h2>This is sub-heading</h2>
+        <p>This is a paragraph</p>
+        <ol>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Mango</li>
+        </ol>
+    </div>
+    <div class="divTwo">
+        <h2>This is another sub-heading</h2>
+        <p>This is another paragraph</p>
+        <ul>
+            <li>English</li>
+            <li>Maths</li>
+            <li>Physics</li>
+        </ul>
+    </div>
+</body>
+
+</html>
