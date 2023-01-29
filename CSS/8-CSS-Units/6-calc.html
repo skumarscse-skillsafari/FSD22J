@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS Units - Calc()">
+    <title>CSS Units - Calc()</title>
+    <style>
+        /* 
+            CSS Units - Calc()
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: blue;
+            height: 10vh;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .banner {
+            background-color: blueviolet;
+            height: calc(100vh - 10vh);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <li>Home</li>
+    </ul>
+    <div class="banner"></div>
+</body>
+
+</html>

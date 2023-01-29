@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS Units - rem">
+    <title>CSS Units - rem</title>
+    <style>
+        /* 
+            CSS Units - rem
+            rem => relative, depends on root
+            root => 10px
+            1rem => 1 * base value of root element => 1 * 10 => 10px
+            2rem => 2 * 10 => 20px
+            html => 
+            h1 => 32px
+            h3 => 18.72px
+            p => 16px
+        */
+        html {
+            font-size: 20px;
+        }
+
+        div {
+            font-size: 5px;
+        }
+
+        .absolute {
+            font-size: 20px;
+        }
+
+        .relative {
+            font-size: 0.5rem;
+            /* 0.5 * 20 => 10px */
+        }
+
+        p {
+            font-size: 2rem;
+            /* 2 * 20 => 40px */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Units - rem</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, cupiditate?</p>
+    <div>
+        <h3 class="relative">Relative Text</h3>
+    </div>
+
+    <div>
+        <h3 class="absolute">Absolute Text</h3>
+    </div>
+</body>
+
+</html>
