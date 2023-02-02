@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Position - Absolute">
+    <title>CSS - Position - Absolute</title>
+    <style>
+        /* 
+            CSS - Position - Absolute
+            // Element removed from the actual flow and moved to the immediate descendant
+            // If no descendant presents, it moves to the root element 
+            // Inset => 1. top   // 2. left      // 3. bottom        // 4. right
+        */
+        div {
+            height: 100px;
+            width: 800px;
+        }
+
+        .one {
+            background: green;
+        }
+
+        .two {
+            background: crimson;
+
+
+        }
+
+        .three {
+            background: coral;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            background: yellowgreen;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+
+        .outer {
+            margin-top: 40px;
+            height: 400px;
+            width: 300px;
+            border: 1px solid red;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .inner {
+            height: 150px;
+            width: 100px;
+            border: 1px solid green;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="relative">
+        <div class="absolute"></div>
+    </div>
+
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>
