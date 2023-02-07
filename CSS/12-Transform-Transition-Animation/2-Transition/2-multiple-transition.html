@@ -5,19 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="CSS - Transition - Intro">
-    <title>CSS - Transition - Intro</title>
+    <meta name="Description" content="CSS - Multiple Transition">
+    <title>CSS - Multiple Transition</title>
     <style>
         /* 
-        CSS - Transition - Intro
-        Syntax
-        transition: propertyName time-delay
-        transition-property
-        transition-delay
+        Multiple Transition
         */
         div {
             height: 150px;
             width: 150px;
+            display: inline-block;
         }
 
         div:hover {
@@ -34,13 +31,24 @@
 
         .three {
             background: blue;
-            transition: background 5s;
+            transition-property: background, border-radius, tranform;
+            /* transition-duration: 5s, 10s; */
+            transition-duration: 5s;
+
+            /* Short-hand property for multiple transition */
+            /* transition: all duration transition-timing-function */
+            transition: all, 5s;
+        }
+
+        .three:hover {
+            border-radius: 50%;
+            transform: scale(1.5);
         }
     </style>
 </head>
 
 <body>
-    <h1>CSS - Transition - Intro</h1>
+    <h1>CSS - Multiple Transition</h1>
     <div class="one"></div>
     <div class="two"></div>
     <div class="three"></div>
