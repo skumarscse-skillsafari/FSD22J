@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Flex - Basis">
+    <title>CSS - Flex - Basis</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #f3f3f3;
+        }
+
+        .parent {
+            border: 5px solid red;
+            display: flex;
+        }
+
+        .child {
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: #f3f3f3;
+            /* flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 150px; */
+        }
+
+        .child-1 {
+            background: #581f18;
+        }
+
+        .child-2 {
+            background: #f0a202;
+        }
+
+        .child-3 {
+            background: #d95d39;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 250px;
+            /* flex: 1 1 250px; */
+            /* flex-grow: 1;
+            flex-shrink: 1;
+            width: 250px; */
+        }
+
+        .child-4 {
+            background: #202c59;
+        }
+
+        .child-5 {
+            background: #51cb20;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Flex or Flex-box => Controlling the child elements present inside the parent element
+     -->
+    <h1>CSS - Flex - Basis</h1>
+    <div class="parent">
+        <div class="child child-1">One</div>
+        <div class="child child-2">Two</div>
+        <div class="child child-3">Three</div>
+        <div class="child child-4">Four</div>
+        <div class="child child-5">Five</div>
+    </div>
+</body>
+
+</html>
