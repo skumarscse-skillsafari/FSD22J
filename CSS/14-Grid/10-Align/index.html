@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Grid - Align Properties">
+    <title>CSS - Grid - Align Properties</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #222;
+        }
+
+        .parent {
+            height: 100vh;
+            border: 5px solid red;
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 100px);
+            /* align-content => control the elements vertically or row-wise
+            */
+            align-content: space-around;
+        }
+
+        .child {
+            padding: 2rem;
+            background: #dedede;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid green;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child child-1">One</div>
+        <div class="child child-2">Two</div>
+        <div class="child child-3">Three</div>
+        <div class="child child-4">Four</div>
+        <div class="child child-5">Five</div>
+    </div>
+</body>
+
+</html>
