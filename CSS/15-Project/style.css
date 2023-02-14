@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.company-info {
+  background: coral;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.company-info > .company-logo > a {
+  text-decoration: none;
+  font-family: "Cinzel Decorative", cursive;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.company-info > .company-name > a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.company-info > .search > input {
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  width: 200px;
+}
+
+.navbar > ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background: crimson;
+  padding: 20px;
+}
+
+.navbar > ul > .nav-item > a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#overall-section {
+  min-height: 100vh;
+  background: yellowgreen;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  /* height: 100vh; */
+  width: 25%;
+  background: gray;
+  padding: 20px;
+}
+
+.right {
+  /* height: 100vh; */
+  width: 75%;
+  background: goldenrod;
+  padding: 20px;
+}
+
+footer {
+  background: coral;
+}
+
+footer > p {
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+}
