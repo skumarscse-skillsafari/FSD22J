@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Functions - Intro">
+    <title>Functions - Intro</title>
+</head>
+
+<body>
+    <h1>Functions - Intro</h1>
+
+    <script>
+        // Functions - Intro
+        // Building block of the application
+        // We can define some set of codes inside the function and those codes can be accessed only
+        // by calling that function
+        // Ex: ATM machine
+
+        // 1. Declaration
+        // 2. Calling
+
+        // Syntax
+        // Declaration
+        // function functionName(parameter) {
+        // function statements
+        // }
+
+        // Calling the function
+        // functionName(argument)
+
+        // Declaration
+        // function greetUser() {
+        //     let username = prompt("Enter username", "John");
+        //     let age = prompt("Enter age", 18);
+        //     let designation = prompt("Enter designation", "Software Engineer");
+        //     console.log("--------------------------------------");
+        //     console.log("------------User Details---------------");
+        //     console.log(`Name: ${username}`);
+        //     console.log(`Age: ${age}`);
+        //     console.log(`Designation: ${designation}`);
+        //     console.log("----------------------------------------");
+        // }
+
+        // // Call the function
+        // // functionName()
+        // greetUser();
+        // greetUser();
+
+        // Local and Outer variables
+        // function displayAge() {
+        //     // local variable => scope => will not goes outside the block
+        //     let age = 20;
+        //     console.log(age); // 20
+        // }
+        // let age = 30;
+        // displayAge();
+        // console.log(age); // 30
+
+        // Outer variable => Access and modify inside the local variable
+        // let age = 25;
+        // function displayAge() {
+        //     age = 30;
+        //     console.log(age); // 30
+        // }
+        // displayAge()
+        // console.log(age); // 30
+
+        // Function with parameters
+        // Send the value to the function at the time of calling
+        // function userDetails(name, age, designation) { // name = "John", age = 18, designation = "Software Engineer"
+        //     console.log(`Username: ${name}`);
+        //     console.log(`Age: ${age}`);
+        //     console.log(`Designation: ${designation}`);
+        // }
+        // userDetails("John", 18, "Software Engineer");
+        // userDetails("Jack", 25, "Tester");
+        // userDetails("Mary", 20, "UI/UX designer");
+
+        // function printNumber(number) {
+        //     for (let i = 1; i <= number; i++) {
+        //         console.log(i)
+        //     }
+        // }
+        // // printNumber(2);
+        // printNumber(5);
+
+        // Default values
+        // If the user not providing the value as argument, the default value of parameter applies
+        // function userInfo(name, age = 20, city = "Chennai") {
+        //     console.log(`Username: ${name}`);
+        //     console.log(`Age: ${age}`);
+        //     console.log(`Designation: ${city}`);
+        // }
+        // userInfo("Jack", 25);
+
+        // Return in Function
+        // Function body must have only one "return" keyword
+        // "return" must be present at the end of the function body
+        // function displayAge(age) { // age = 20
+        //     console.log("I am from inside the function");
+        //     return age;
+        // }
+        // let age = displayAge(20);
+        // console.log(age);
+
+
+        // function add(a, b) {
+        //     console.log("Function with return Keyword")
+        //     let num1 = a; // a = 10
+        //     let num2 = b; // b = 5
+        //     let sum = num1 + num2; // 10 + 5 => 15
+        //     return sum; // 15
+        // }
+        // let result = add(10, 5);
+        // console.log(result);
+    </script>
+</body>
+
+</html>
