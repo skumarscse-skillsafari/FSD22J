@@ -135,14 +135,35 @@
         // }
 
         // Write a JS Program to print first 20 Even numbers
-        for (let number = 1; number <= 40; number++) {
-            if (!(number % 2)) { // 3 % 2 => 1
-                console.log(number);
-            }
-        }
+        // for (let number = 1; number <= 40; number++) {
+        //     if (!(number % 2)) { // 3 % 2 => 1
+        //         console.log(number);
+        //     }
+        // }
 
         // Odd => num % 2 => 1 Ex. 21 % 2 => 1 => 7 % 2 => 1 <= true
         // Even => num % 2 => 0 Ex. 18 % 2 => 0 => 8 % 2 => 0 <= false
+
+        // Nested Loops
+        // Loop inside a Loop
+
+        document.write("<h1>Hello</h1>");
+        // Outer Loop
+        for (let i = 1; i <= 5; i++) {
+            // Outer Loop => if, outer loop runs once, the inner loop needs to run completly till the condition fails
+            // console.log("-------Outer Loop----------");
+            // console.log(i); // 1 2 3 4 5
+            // Inner Loop
+            for (let j = 1; j <= i; j++) { // 6 <= 5
+                // console.log("--------Inner Loop--------");
+                document.write(String(j) + " ");
+                // 1
+                // 1 2 
+                // 1 2 3
+                // 1 2 3 4
+                // 1 2 3 4 5
+            }
+        }
 
 
 
