@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Function Expression">
+    <title>Function Expression</title>
+</head>
+
+<body>
+    <h1>Function Expression</h1>
+
+    <script>
+
+        // Function Expression
+        // function displayName(name) {
+        //     console.log(name);
+        // }
+        // displayName(prompt("Enter a name", "John"))
+
+        let name = "John";
+        let age = 30;
+
+        // Syntax
+        // let varName = function (parameter) {
+        // function body
+        // }
+        // varName(argument);
+        // Anonymous function => Function without function name
+        // let displayName = function (name) {
+        //     console.log(name);
+        // }
+        // displayName(prompt("Enter name", "John"));
+
+        // Copy a function from one variable to another variable
+        // let displayAge = function (age) {
+        //     console.log("User age is:" + age);
+        // }
+        // displayAge(25);
+        // let displayAgeCopy = displayAge;
+        // displayAgeCopy(30);
+
+        // let a = 10;
+        // let b = a;
+        // console.log(a); // 10
+        // console.log(b); // 10
+
+        // Callback function
+        // Passing a function as a parameter to a function
+        // parameter => primitive values
+        // function displayUser(name, age) {
+        //     console.log("The user details are: ");
+        //     name(); // let name = displayName()
+        //     age(); // let age = displayAge()
+        // }
+
+        // function displayName() {
+        //     console.log("John");
+        // }
+
+        // function displayAge() {
+        //     console.log(25);
+        // }
+
+        // displayUser(displayName, displayAge);
+
+        // Function Expression Vs. Function Declaration
+
+        // Function Expression
+        let displayUserDetails = function (name, age, city) {
+            console.log(`User Name: ${name}`);
+            console.log(`User Age: ${age}`);
+            console.log(`User City: ${city}`);
+        }
+
+        // Function Calling
+        displayUserDetails("John", 25, "Chennai");
+
+
+        // Function Calling
+        displayColors("red", "green", "blue");
+        // Function Declaration
+        function displayColors(colorOne, colorTwo, colorThree) {
+            console.log(`Color-one: ${colorOne}`);
+            console.log(`Color-two: ${colorTwo}`);
+            console.log(`Color-three: ${colorThree}`);
+        }
+    </script>
+</body>
+
+</html>
