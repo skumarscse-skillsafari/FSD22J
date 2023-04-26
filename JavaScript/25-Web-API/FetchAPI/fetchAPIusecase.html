@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Fetch API - UseCase" />
+    <title>Fetch API - UseCase</title>
+  </head>
+  <body>
+    <h2>Fetch API - UseCase</h2>
+    <h3>Products Details</h3>
+    <div id="products-container"></div>
+
+    <script>
+      // Fetch API - UseCase
+      // Async
+      // 1. Promise => then() and catch()
+      // 2. async/await => try {...} catch {...}
+
+      //   fetch("./demo.txt")
+      //     .then((res) => res.text())
+      //     .then((txtContent) => console.log(txtContent))
+      //     .catch((err) => console.log(err));
+
+      //   let fetchText = async (url) => {
+      //     let res = await fetch(url);
+      //     let data = await res.text();
+      //     console.log(data);
+      //   };
+
+      //   fetchText("./demo.txt");
+      // Async/Await
+      //   const getProducts = async (url) => {
+      //     try {
+      //       let productsContainer = document.querySelector("#products-container");
+      //       let res = await fetch(url);
+      //       let products = await res.json();
+      //       let productsArr = products.map((product) => {
+      //         return `
+      //                 <div id=product-${product.id}>
+      //                     <p>Product Title: ${product.title}</p>
+      //                     <p>Product Description: ${product.description}</p>
+      //                     <p><img src=${product.image} alt=image-${product.id} height="40px" width="40px" /></p>
+      //                     <hr />
+      //                 </div>
+      //             `;
+      //       });
+      //       //   console.log(productsArr.join(" "));
+      //       productsContainer.innerHTML = productsArr.join(" ");
+      //     } catch (error) {
+      //       console.log(`Something went wrong: ${error}`);
+      //     }
+      //   };
+
+      //   getProducts("https://fakestoreapi.com/products");
+
+      fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((products) => {
+          let productsArr = products.map((product) => {
+            return `
+                      <div id=product-${product.id}>
+                          <p>Product Title: ${product.title}</p>
+                          <p>Product Description: ${product.description}</p>
+                          <p><img src=${product.image} alt=image-${product.id} height="40px" width="40px" /></p>
+                          <hr />
+                      </div>
+                  `;
+          });
+          document.querySelector("#products-container").innerHTML =
+            productsArr.join(" ");
+        })
+        .catch((err) => console.log(`Something went wrong: ${err}`));
+    </script>
+  </body>
+</html>
