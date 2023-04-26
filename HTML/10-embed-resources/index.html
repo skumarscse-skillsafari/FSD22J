@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Embed Resources - Images, Audio and Video">
+    <title>Embed Resources - Images, Audio and Video</title>
+</head>
+
+<body>
+    <h1>Embed Resources - Images, Audio and Video</h1>
+    <p>This is a paragraph</p>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Portfolio</li>
+        <li>Contact</li>
+    </ul>
+
+    <strong>Hello,</strong><i>World</i>
+    <hr>
+    <!-- 
+        Rules:
+        1. You need to have separate folders for images, audio, video etc...
+        2. All your resouces folder (images, audio, video) must be present inside the base folder 
+        of your html file
+     -->
+    <!-- 
+        1. Block-level elements
+            Ex: h1, p, hr, ul, ol => Always starts in new line and occupies complete width of viewport area
+        2. In-line elements
+            Ex: strong, i, em, img, audio, video => Always occupies the space in the browser based on the content size. 
+            Always positioned next to the other elements
+      -->
+    <!-- 
+        Embed Images
+        Syntax
+        <img src="" alt="" height="" width="" /> or <img> => Self-closing tag
+        // src => path of the image to be displayed
+        // alt => some content related to the image in the "src" attribute
+        // content in the "alt" attribute only be displayed if there is any wrong in the "path" of "src" attribute
+        // height and width => used to set height and width to the image
+     -->
+    <h2>Embed Images</h2>
+    <img src="./assets/images/image-one.jpg" alt="first-image" height="250px" width="250px">
+    <img src="./assets/images/image-two.jpg" alt="second-image" height="250px" width="250px">
+    <img src="./assets/images/image-three.jpg" alt="third-image" height="250px" width="250px">
+    <hr>
+
+    <!-- 
+        Embed Audio
+        <audio controls autoplay>
+            <source src="path_of_audio" />
+        </audio>
+      -->
+    <h2>Embed Audio</h2>
+    <audio controls>
+        <source src="./assets/audios/shape-of-you.mp3">
+    </audio>
+    <hr>
+
+    <!-- 
+        Embed Video
+        <video controls autoplay height="" width="">
+            <source src="path_of_video">
+        </video>
+     -->
+    <h2>Embed Video</h2>
+    <video controls>
+        <source src="./assets/videos/videoplayback.mp4">
+    </video>
+</body>
+
+</html>

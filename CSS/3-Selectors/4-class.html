@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Class Selector">
+    <title>CSS - Class Selector</title>
+    <style>
+        /* 
+            Class Selector => Used to apply a CSS properties to a group of elements 
+            1. Attribute => class = "value"
+            2. One html element can have morethan one classes Ex: class = "className-1 className-2 className-N"
+            Syntax
+            .value {
+                propertyName: propertyValue;
+            }
+        */
+
+        .demoOne {
+            color: brown;
+        }
+
+        .demoTwo {
+            color: green;
+        }
+
+        .changeColor {
+            color: blue;
+        }
+
+        .changeFontSize {
+            font-size: 32px;
+        }
+
+        .addMarginRight {
+            margin-right: 20px;
+        }
+
+        .demoOne,
+        .demoTwo {
+            font-size: 12px;
+        }
+
+        /* Specificity */
+        p.demoOne {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS - Class Selector</h1>
+    <p class="demoOne">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, nobis.</p>
+    <ul class="demoOne">
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, obcaecati.</p>
+    <div class="demoTwo">
+        <h2>This is a heading</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, id.</p>
+        <ol>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Mango</li>
+            <li>Banana</li>
+        </ol>
+    </div>
+    <hr>
+    <h2 class="demoTwo">Element with more than one classname</h2>
+    <p class="changeColor changeFontSize addMarginRight">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Eveniet, itaque saepe. Facilis animi harum culpa fugit
+        dignissimos vitae repellat minima.</p>
+</body>
+
+</html>

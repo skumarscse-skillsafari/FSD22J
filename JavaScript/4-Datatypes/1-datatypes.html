@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DataTypes">
+    <title>DataTypes</title>
+</head>
+
+<body>
+    <h1>DataTypes</h1>
+
+    <script>
+        // DataTypes
+        // 1. Primitive Datatype
+        // in a variable, we can able to store only one value
+        // String, Number, BigInt, Boolean, Null, Undefined, Symbol
+        // 2. Non-Primitive Datatype
+        // Store multiple values in a single variable
+        // Objects, Arrays, Functions
+
+        // Primitives
+        // String
+        // 1. Double Quotes
+        // 2. Single Quotes
+        // 3. Backticks (String literals => ES6)
+
+        // "Hello, World"
+        // 'Hello, World'
+        // `Hello, World'
+
+        // let doubleQuote = "Hello, World ${20 + 70}";
+        // let singleQuote = 'Hello, World ${20 + 70}';
+        // let backTick = `Hello, World ${20 + 70}`;
+        // console.log(doubleQuote); // Hello, World
+        // console.log(singleQuote); // Hello, World
+        // console.log(backTick); // Hello, World
+
+        // backtick
+        // `` and ${ statement: code, expression, var }
+        // let example = `The Sum of two values: ${20 + 70}`;
+        // console.log(example);
+
+        // Number
+        // whole number and decimal number
+        // 123 / 12.3
+        // let numOne = 123;
+        // let numTwo = 1.23;
+        // console.log(numOne);
+        // console.log(numTwo);
+
+        // BigInt
+        // Hold scientific values => bigger number with more precision
+        // All the BigInt value ends with "n"
+        let bigInt = 123456789012345678901234567890n;
+        // console.log(bigInt);
+
+        // Boolean => true or false => 1 or 0 => on or off => yes or no
+        let userName = "John";
+        let userAge = 25;
+        let isAdmin = true;
+        // console.log(userName);
+        // console.log(userAge);
+        // console.log(isAdmin);
+
+        // Null
+        // value of the variable is unknown
+        let name = null;
+        console.log(name);
+
+        // Undefined
+        // variable without value
+        let age;
+        console.log(age);
+
+        // typeof => find the datatype of the data
+        // Syntax
+        // typeof data
+        console.log(typeof userName);
+        console.log(typeof userAge);
+        console.log(typeof bigInt);
+        console.log(typeof true);
+        console.log(typeof name);
+        console.log(typeof age)
+    </script>
+</body>
+
+</html>

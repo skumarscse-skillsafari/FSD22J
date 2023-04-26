@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Object - methods">
+    <title>Object - methods</title>
+</head>
+
+<body>
+    <h1>Object - methods</h1>
+
+
+    <script>
+        // Object - methods
+        // Object.keys()
+        // Object.values()
+        // Object.entries()
+
+        // Map, Set, Arrays
+
+        // for..of
+        // Object.keys(obj) => iterable "keys" or "propertyNames"
+        // Object.values(obj) => iterable "values" or "propertyValues"
+        // Object.entries(obj) => iterable [key, value] pair ot propertyName : propertyValue pair
+
+        let userDetails = {
+            name: "John",
+            age: 20,
+            city: "Chennai",
+            isAdmin: true,
+            dept: "Development"
+        }
+        console.log(userDetails);
+
+        console.log(Object.keys(userDetails));
+        for (const key of Object.keys(userDetails)) {
+            console.log(key);
+        }
+
+        console.log(Object.values(userDetails));
+        for (const value of Object.values(userDetails)) {
+            console.log(value);
+        }
+
+        console.log(Object.entries(userDetails));
+        for (const [key, value] of Object.entries(userDetails)) {
+            console.log(`${key} => ${value}`);
+        }
+
+        // Transforming Object properties
+        let fruits = {
+            apple: 20,
+            orange: 10,
+            mango: 15
+        }
+
+        // let fruits = {
+        //     apple: 10,
+        //     orange: 5,
+        //     mango: 7.5
+        // }
+
+        console.log(Object.entries(fruits))
+        let newFruits = Object.entries(fruits).map((fruit) => { // [apple, 20]
+            return [fruit[0], fruit[1] / 2]
+        })
+        console.log(Object.fromEntries(newFruits));
+
+        // console.log(Object.fromEntries(new Map([
+        //     [1, 2],
+        //     [3, 4]
+        // ])))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="if...else if...else">
+    <title>if... else if...else</title>
+</head>
+
+<body>
+    <h1>if...else if...else</h1>
+
+    <script>
+        // if...else if...else
+        // else if is to check for multiple conditions
+        // Syntax
+        /*
+        if (condition-1 == false) {
+            // check condition -2
+        } else if (condition-2 == false) {
+            // check condition - 3
+        } else if (condition-3 == false) {
+            // execute else part
+        } else {
+            // else block
+        }
+        */
+        let name = prompt("Enter user name", "John");
+        let userAge = +prompt("Enter user age", 18);
+        // console.log(name);
+        // Authorized User if name == "John" and age > 18
+        if (name != "John") {
+            console.log("Unauthorized");
+        } else if (userAge < 18) {
+            console.log("Unauthorized")
+        } else {
+            console.log("Authorized user");
+        }
+    </script>
+</body>
+
+</html>

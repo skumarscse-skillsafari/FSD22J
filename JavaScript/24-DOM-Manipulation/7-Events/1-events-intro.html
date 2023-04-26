@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Events-Intro">
+    <title>Events-Intro</title>
+</head>
+
+<body>
+    <h1>Events - Intro</h1>
+    <button id="btn">Add Event</button>
+    <button id="remove-btn">Remove Event</button>
+
+    <script>
+        // Events - Intro
+        // 1. HTML event handler attributes
+        // 2. Event Listeners => Add and Remove the event to the HTML element
+        let btn = document.querySelector("#btn");
+        let removeBtn = document.querySelector("#remove-btn");
+        // btn.onclick = (e) => {
+        //     alert("Hello, I am from HTML event handler attribute");
+        //     console.log(e.target.id);
+        // }
+
+        // btn.onmouseover = () => {
+        //     console.log("Mouseover Event");
+        // }
+
+
+        // Event Listeners
+        // Add a event to an element
+        // Remove a event from the element
+        // Syntax
+        // Adding the event
+        /*
+            element.addEventListner("eventType", "listenerFunction")
+        */
+        // Method - 1
+        // btn.addEventListener("click", function () {
+        //     console.log("Add event listeners")
+        // });
+
+        // Method -2
+        // let displayMessage = function () {
+        //     console.log("Add event listeners")
+        // }
+        // btn.addEventListener("click", displayMessage);
+
+        // Method - 3
+        // btn.addEventListener("click", () => console.log("Add Event"));
+
+        btn.addEventListener("click", displayMessage);
+        function displayMessage() {
+            console.log("Hello...");
+        }
+
+        // Remove a event from an element
+        // Syntax
+        /*
+        element.removeEventListner("click", "listenerFun")
+        */
+        removeBtn.addEventListener("click", function () {
+            btn.removeEventListener("click", displayMessage);
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

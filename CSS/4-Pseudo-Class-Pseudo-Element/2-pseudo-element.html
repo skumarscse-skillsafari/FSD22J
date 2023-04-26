@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Pseudo Element">
+    <title>CSS - Pseudo Element</title>
+    <style>
+        /* 
+        CSS - Pseudo Element => in-line elements => not possible to add height and width
+        Syntax
+        selector::pseudoElementName {
+            propertyName: propertyValue;
+        }
+        */
+        h1::after {
+            display: block;
+            content: "";
+            height: 10px;
+            width: 330px;
+            background-color: crimson;
+        }
+
+        h1::before {
+            display: block;
+            content: "";
+            height: 10px;
+            width: 330px;
+            background-color: crimson;
+        }
+
+        p::first-letter {
+            font-size: 32px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS - Pseudo Element</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit animi assumenda unde quis optio. Corrupti at
+        odio ratione minima quas.</p>
+</body>
+
+</html>

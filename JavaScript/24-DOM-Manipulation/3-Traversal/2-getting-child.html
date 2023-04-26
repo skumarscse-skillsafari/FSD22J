@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Getting Child">
+    <title>DOM - Getting Child</title>
+</head>
+
+<body>
+    <h1>DOM - Getting Child</h1>
+    <div id="parent">
+        <p id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+        <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+        <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+        <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+    </div>
+
+    <form action="#">
+        <input type="radio" name="subject" id="subject-one">English
+        <input type="radio" name="subject" id="subject-two">Maths
+        <input type="radio" name="subject" id="subject-three">Physics
+        <input type="radio" name="subject" id="subject-four">Chemistry
+    </form>
+
+    <script>
+        // DOM - Getting Child
+        // 1. parentElement.firstElementChild => get the first child of the selected parent element
+        // 2. parentElement.lastElementChild => get the last child of the selected parent element
+        // 3. parentElement.children => get all the childs of the selected parent element as HTMLCollection
+
+        // id="parent"
+        let parentEle = document.querySelector("#parent");
+        // Get First Child
+        // console.log(parentEle.firstElementChild);
+
+        // Get the Last Child
+        // console.log(parentEle.lastElementChild);
+
+        // Get all the childs
+        console.log(parentEle.children);
+        console.log(parentEle.children[0]);
+        console.log(parentEle.children[1]);
+        console.log(parentEle.children[2]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Destructuring Assignment">
+    <title>Destructuring Assignment</title>
+</head>
+
+<body>
+    <h1>Destructuring Assignment</h1>
+
+    <script>
+        // Destructuring Assignment => unpack the data in array and object
+        // Arrays and Objects
+        // Array => [1, 2 , 3]
+        // Object => { name: "jack", age: 25}
+
+
+        // Arrays
+        // let subjects = ["English", "Maths", "Physics", "Chemistry", "Computer"]
+        // console.log(subjects[3]);
+
+        // Syntax
+        // let [var-1, var-2, ..., var-N] = [val-1, val-2, ..., val-N];
+        // var-1 => val-1
+
+        // let userDetails = ["John", 25];
+        // console.log(userDetails[0])
+        // console.log(userDetails[1])
+
+        // let [name, age] = ["John", 25];
+        // // name => John
+        // // age => 25
+        // console.log(name);
+        // console.log(age);
+
+        // let [firstName, lastName] = "John, Jack".split(", "); // ["John", "Jack"]
+        // console.log(firstName);
+        // console.log(lastName);
+
+        // let userDetails = {
+        //     name: "John",
+        //     age: 25,
+        //     isAdmin: true,
+        //     city: "Chennai"
+        // }
+        // let [name, age, isAdmin, city] = Object.entries(userDetails); // [name, age, isAdmin, city]
+        // console.log(name)
+        // console.log(age)
+        // console.log(isAdmin)
+        // console.log(city)
+        // console.log(Object.fromEntries([name, age, isAdmin, city]))
+
+
+        // ignoring the elements using comma ","
+        // let [fruitOne, , , fruitFour] = ["Apple", "Orange", "Mango", "Banana"];
+        // console.log(fruitOne);
+        // console.log(fruitFour);
+
+        // let user = {};
+        // [user.firstName, user.lastName] = "John, Jack".split(", ");
+        // console.log(user);
+
+        // Swap the values without using third variable
+        // let numOne = 10;
+        // let numTwo = 20;
+        // numOne = 20 and numTwo = 10
+        // let temp = numOne; // temp = 10
+        // numOne = numTwo; // numOne = 20
+        // numTwo = temp; // numTwo = 10
+        // console.log(numOne);
+        // console.log(numTwo);
+        // [numOne, numTwo] = [numTwo, numOne];
+        // console.log(numOne);
+        // console.log(numTwo);
+
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // let [subOne, subTwo, subThree, subFour] = subjects;
+        // console.log(subOne);
+        // console.log(subTwo);
+        // console.log(subThree);
+        // console.log(subFour);
+
+        // rest => ...varName
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // let [subOne, subTwo, ...rest] = subjects;
+        // console.log(subOne); // English
+        // console.log(subTwo); // Maths
+        // console.log(rest); // [ "Physics", "Chemistry" ]
+        // // let [subThree, subFour] = rest;
+        // console.log(subThree);
+        // console.log(subFour);
+
+        // Default values
+        // let [firstName, lastName = "Jack"] = ["John", "Robert"];
+        // console.log(firstName); // John
+        // console.log(lastName); // undefined
+
+        // let [name = "Guest", age = 30] = [, 25];
+        // console.log(name);
+        // console.log(age);
+
+        // Object Destructuring
+        // Syntax
+        // let { propName-1, propName-2, ..., propName-N } = {propName-1: value-1, propName-2: value-2, ..., propName-N: value-N}
+        // let user = {
+        //     firstName: "John",
+        //     lastName: "Jack",
+        //     age: 25,
+        //     isAdmin: true
+        // }
+        // let { age, isAdmin, firstName, lastName } = user;
+        // console.log(firstName)
+        // console.log(lastName)
+        // console.log(age)
+        // console.log(isAdmin)
+
+        // let [var1, var4, var3, var2] = [1, 2, 3, 4]
+        // console.log(var1)
+        // console.log(var2)
+        // console.log(var3)
+        // console.log(var4)
+
+        // Alias name to the propertyNames
+        // let user = {
+        //     firstName: "John",
+        //     lastName: "Jack",
+        //     age: 25,
+        //     isAdmin: true
+        // }
+        // Syntax
+        // let {propName: aliasName } = {propName: value}
+        // let { firstName: name } = { firstName: "John" }
+        // let { age, isAdmin, firstName, lastName } = user;
+        // console.log(firstName)
+        // console.log(lastName)
+        // console.log(age)
+        // console.log(isAdmin)
+
+        // let { firstName: n } = { firstName: "Mary" };
+        // console.log(n);
+
+        // let studentDetails = {
+        //     regNo: 10001,
+        //     name: "John",
+        //     dept: "CSE",
+        //     percentage: 85
+        // }
+        // let { regNo: r, name: n, dept: d, percentage: p } = studentDetails;
+        // console.log(r)
+        // console.log(n)
+        // console.log(d)
+        // console.log(p)
+
+        // rest => ...VarName
+        // let studentDetails = {
+        //     regNo: 10001,
+        //     name: "John",
+        //     dept: "CSE",
+        //     percentage: 85
+        // }
+        // let { regNo, name, ...rest } = studentDetails;
+        // console.log(regNo); // 10001
+        // console.log(name); // John
+        // console.log(rest); // { dept: "CSE", percentage: 85}
+        // // console.log(rest.dept);
+        // // console.log(rest.percentage);
+        // let { dept: d, percentage: p } = rest;
+        // console.log(d, p)
+
+        // let firstName, lastName, age;
+        // ({ firstName, lastName, age } = { firstName: "John", lastName: "Jack", age: 25 });
+        // console.log(firstName)
+        // console.log(lastName)
+        // console.log(age)
+
+        // Nested destructuring
+        // let userDetails = {
+        //     name: {
+        //         firstName: "John",
+        //         lastName: "Jack"
+        //     },
+        //     age: 25,
+        //     address: {
+        //         city: "Chennai",
+        //         state: "Tamilnadu"
+        //     },
+        //     hobbies: ["football", "cricket"]
+        // }
+        // let {
+        //     name: { firstName: f, lastName: l },
+        //     age,
+        //     address: { city: c, state: s },
+        //     hobbies: [hobbyOne, hobbyTwo]
+        // } = userDetails;
+        // console.log(f)
+        // console.log(l)
+        // console.log(c)
+        // console.log(s)
+        // console.log(hobbyOne)
+        // console.log(hobbyTwo)
+
+        // Destructuring in function parameter and arguments
+        // function userDetails(firstName, lastName, age, isAdmin) {
+        //     console.log(firstName)
+        //     console.log(lastName)
+        //     console.log(age)
+        //     console.log(isAdmin)
+        // }
+        // userDetails("John", "Jack", 25, true);
+
+        // Default values
+        // function userDetails(firstName = "John", lastName = "Jack", age, isAdmin) {
+        //     console.log(firstName)
+        //     console.log(lastName)
+        //     console.log(age)
+        //     console.log(isAdmin)
+        // }
+        // userDetails("Mary", "Robert", 25, true);
+
+        // function userDetails([firstName, lastName, age, isAdmin]) {
+        //     console.log(firstName)
+        //     console.log(lastName)
+        //     console.log(age)
+        //     console.log(isAdmin)
+        // }
+        // userDetails(["Mary", "Robert", 25, true]);
+        // let [firstName, lastName, age, isAdmin] = ["Mary", "Robert", 25, true]
+
+        let userDetails = {
+            firstName: "John",
+            lastName: "Jack",
+            age: 25,
+            isAdmin: false
+        }
+
+        function userInfo({ firstName: f, lastName: l, age: a, isAdmin: i }) {
+            console.log(f)
+            console.log(l)
+            console.log(a)
+            console.log(i)
+        }
+        userInfo(userDetails)
+        // let {firstName, lastName, age, isAdmin} = userDetails
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="insertBefore()">
+    <title>insertBefore()</title>
+</head>
+
+<body>
+    <h1>insertBefore()</h1>
+    <ul id="subjects">
+        <li>English</li>
+        <li>Maths</li>
+        <li>Physics</li>
+    </ul>
+
+    <script>
+        // insertBefore() => insert a new node before an existing node as a child node of a specified
+        // parent node
+        // Syntax
+        // parentNode.insertBefore(newNode, existingNode)
+
+        let subjects = document.querySelector("#subjects");
+        let li = document.createElement("li");
+        li.id = "new-item";
+        li.textContent = "Chemistry";
+
+        subjects.insertBefore(li, subjects.lastElementChild);
+
+    </script>
+</body>
+
+</html>

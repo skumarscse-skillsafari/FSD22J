@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Array Methods - Usecase">
+    <title>Array Methods - Usecase</title>
+</head>
+
+<body>
+    <h1>Array Methods - Usecase</h1>
+
+    <script>
+        // Array Methods - Usecase
+        let students = [
+            {
+                id: 1001,
+                name: "John",
+                dept: "CSE",
+                age: 20,
+                percentage: 80,
+                isPlaced: true
+            },
+            {
+                id: 1002,
+                name: "Jack",
+                dept: "IT",
+                age: 18,
+                percentage: 70,
+                isPlaced: false
+            },
+            {
+                id: 1003,
+                name: "Mary",
+                dept: "EEE",
+                age: 19,
+                percentage: 75,
+                isPlaced: true
+            },
+            {
+                id: 1004,
+                name: "Robert",
+                dept: "ECE",
+                age: 20,
+                percentage: 85,
+                isPlaced: false
+            },
+            {
+                id: 1005,
+                name: "Prince",
+                dept: "CSE",
+                age: 18,
+                percentage: 90,
+                isPlaced: true
+            }
+        ];
+
+        // Get all the placed students details 
+        // without using filter()
+        // let selectedStudents = [];
+        // students.forEach((student) => {
+        //     if (student.isPlaced) {
+        //         selectedStudents.push(student);
+        //     }
+        // });
+        // console.log(selectedStudents);
+
+        // filter()
+        // let selectedStudents = students.filter((student) => student.isPlaced); // true == true => true
+        // console.log(selectedStudents);
+
+        // // filter() => age > 19 
+        // let studentsAge = students.filter((student) => student.age > 19);
+        // console.log(studentsAge);
+
+        // sum of the students age > 19
+        // filter() => age > 19 => sum() => reduce()
+        // let studentAge = students.filter((student) => student.age > 19);
+        // console.log(studentAge);
+        // let sumAge = studentAge.reduce((acc, student) => {
+        //     return acc + student.age
+        // }, 0);
+        // console.log(sumAge);
+
+        // Simplify => chaining methods
+        // filter().reduce()
+        let sumAge = students.filter((student) => student.age > 19)
+            .reduce((acc, student) => acc + student.age, 0);
+        console.log(sumAge); // 40
+
+        // filter() => dept => "CSE" => percentage => equals to 90
+        let studentPercentage = students.filter((student) => student.dept === "CSE")
+            .find((student) => student.percentage === 90);
+        console.log(studentPercentage);
+
+        // map()
+        // students => college: "SkillSafari"
+        // let newStudents = students.map((student) => {
+        //     return {
+        //         ...student,
+        //         college: "SkillSafari"
+        //     }
+        // });
+        // console.log(newStudents);
+
+        // students => add => college: "SKillSafari" added to the students who are placed
+        // others => add => college: "EduKeys"
+        let newStudents = students.map((student) => {
+            if (student.isPlaced) {
+                return {
+                    ...student,
+                    college: "SkillSafari"
+                }
+            }
+            return {
+                ...student,
+                college: "EduKeys"
+            }
+        });
+        console.log(newStudents);
+    </script>
+</body>
+
+</html>

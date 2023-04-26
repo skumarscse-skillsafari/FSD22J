@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="after()">
+    <title>after()</title>
+</head>
+
+<body>
+    <h1>after()</h1>
+
+    <ul id="list">
+        <li>English</li>
+    </ul>
+
+    <script>
+        // after() => insert a node after an element
+        // Syntax
+        // referenceElement.after(node-1, node-2,..., node-N)
+        let h1 = document.querySelector("h1");
+        let p = document.createElement("p");
+        p.id = "para";
+        p.innerText = "This is a paragraph";
+
+        h1.after(p);
+        let subjectsArr = ["Maths", "Physics", "Chemistry"];
+        let english = document.querySelector("#list").firstElementChild;
+        let items = subjectsArr.map((subject) => {
+            let li = document.createElement("li");
+            li.innerText = subject;
+            return li;
+        })
+        console.log(items);
+        // english.after(...items);
+        english.before(...items);
+
+
+
+    </script>
+</body>
+
+</html>

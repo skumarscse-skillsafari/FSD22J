@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Selecting Elements">
+    <title>DOM - Selecting Elements</title>
+</head>
+
+<body>
+    <h1>DOM - Selecting Elements</h1>
+    <p id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+    <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+    <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+    <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+
+    <form action="#">
+        <input type="radio" name="subject" id="subject-one">English
+        <input type="radio" name="subject" id="subject-two">Maths
+        <input type="radio" name="subject" id="subject-three">Physics
+        <input type="radio" name="subject" id="subject-four">Chemistry
+    </form>
+    <script>
+        // Select
+        // tagName, id, class, attribute, descendent selector
+        // 1. getElementById()
+        // 2. getElementsByName()
+        // 3. getElementsByTagName()
+        // 4. getElementsByClassName()
+
+        // 5. querySelector()
+        // 6. querySelectorAll()
+
+        // document
+        // getElementById(idName) => HTML Element
+        // Syntax
+        // document.getElementById("idName");
+        // let para = document.getElementById("para");
+        // console.log(para);
+
+        // getElementsByName()
+        // Syntax
+        // document.getElementsByName(name-attribute-value) => NodeListOf<HTMLElement>
+        // let subjects = document.getElementsByName("subject");
+        // console.log(subjects);
+        // console.log(subjects[0]);
+        // console.log(subjects[1]);
+        // console.log(subjects[2]);
+        // console.log(subjects[3]);
+
+
+        // getElementsByTagName()
+        // Syntax
+        // document.getElementsByTagName("tagName") => HTMLCollectionOf<HTMLParagraphElement>
+        // let paras = document.getElementsByTagName("p");
+        // console.log(paras);
+        // console.log(paras[0]);
+        // console.log(paras[1]);
+        // console.log(paras[2]);
+
+        // getElementsByClassName() => HTMLCollectionOf<Element>
+        // Syntax
+        // document.getElementsByClassName("class-attribute-value");
+        // let demoElements = document.getElementsByClassName("demo");
+        // console.log(demoElements);
+
+
+        // Use CSS selectors select the element
+        // document.querySelector("css selector"); => select single element => css selector
+        // document.querySelectorAll("css selector"); => select more than one element => css selector
+
+        // document.querySelctor("css selector")
+        // id selector => <p id="para">...</p>
+        // #idName
+        // let para = document.querySelector("#para");
+        // console.log(para);
+
+        // let headOne = document.querySelector("h1");
+        // console.log(headOne);
+
+        // document.querySelectorAll("css properties"); => NodeListOf<Element>
+        // class selector => <p class="demo">...</p>
+
+        // let demoElements = document.querySelectorAll(".demo");
+        // console.log(demoElements);
+
+        // form > input
+        let childElements = document.querySelectorAll("form > input");
+        console.log(childElements);
+
+
+    </script>
+</body>
+
+</html>

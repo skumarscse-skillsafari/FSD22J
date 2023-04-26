@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Object - Referencing and Copying">
+    <title>Object - Referencing and Copying</title>
+</head>
+
+<body>
+    <h1>Object - Referencing and Copying</h1>
+
+    <script>
+        // Object - Referencing and Copying
+        // Primitive => String, Number, Boolean, BigInt, Null, Undefined
+        // let firstName = "John";
+        // let lastName;
+        // console.log("Before Copying");
+        // console.log(firstName); // John
+        // console.log(lastName); // undefined
+        // lastName = firstName;
+        // console.log("After Copying");
+        // console.log(firstName); // John
+        // console.log(lastName); // John
+
+        // // Copy by value
+        // firstName = "Jack";
+        // console.log(firstName); // Jack
+        // console.log(lastName); // John
+
+        // Non-Primitive => Object and Arrays
+        // Copy by reference
+        // let userOne = {
+        //     id: 123,
+        //     name: "John",
+        //     city: "Chennai"
+        // };
+        // let userTwo = userOne;
+        // console.log(userOne);
+        // console.log(userTwo);
+
+        // userTwo.id = 456;
+        // userTwo.name = "Jack";
+        // console.log(userOne);
+        // console.log(userTwo);
+
+        // Overcome Copy by reference problem in Non-Primitive datatypes
+        // let userOne = {
+        //     id: 123,
+        //     name: "John"
+        // }
+        // let userTwo = userOne;
+        // console.log(userOne == userTwo); // true => both the variables sharing the common reference
+        // console.log(userOne === userTwo); // true
+
+        // let userOne = {
+        //     id: 123,
+        //     name: "John"
+        // }
+        // let userTwo = {
+        //     id: 123,
+        //     name: "John"
+        // }
+        // console.log(userOne == userTwo); // false => both are different variables mapping to different reference
+        // console.log(userOne === userTwo); // false
+
+        // Cloning, Merging, Object.assign()
+        // Cloning
+        // for...in
+        // let userOne = {
+        //     id: 123,
+        //     name: "John",
+        //     city: "Chennai",
+        //     isAdmin: true,
+        // }
+        // let userTwo = {};
+        // console.log(userOne);
+        // console.log(userTwo);
+        // for (const key in userOne) {
+        //     userTwo[key] = userOne[key]; // userTwo["id"] = userOne["id"] => 123
+        //     // userTwo["name"] = userOne["name"] => John
+        //     // userTwo["city"] = userOne["city"] => Chennai
+        //     // userTwo["isAdmin"] = userOne["isAdmin"] => true
+        //     // userTwo.isAdmin = true
+        // }
+        // console.log(userOne);
+        // console.log(userTwo);
+        // userTwo.id = 456;
+        // console.log(userOne);
+        // console.log(userTwo);
+
+        // let userDetails = {
+        //     id: 123,
+        //     name: "John",
+        //     address: {
+        //         streetNo: 12,
+        //         city: "Bangalore",
+        //         state: "Karnataka"
+        //     }
+        // }
+        // console.log(userDetails.id); // 123
+        // console.log(userDetails.address); // { streetNo: 12, city: "Bangalore", state: "Karnataka"}
+        // console.log(userDetails.address.city); // Bangalore
+
+        // Object.assign()
+        // clone and merge the properties of one object into another
+        // Object.assign()
+        // Syntax (cloning)
+        // Object.assign(dest, source);
+        // let userOne = {
+        //     id: 123,
+        //     name: "John",
+        //     isAdmin: true
+        // }
+        // let userTwo = {};
+        // Object.assign(userTwo, userOne);
+        // // console.log(userOne);
+        // // console.log(userTwo);
+
+        // userTwo.id = 456;
+        // console.log(userOne);
+        // console.log(userTwo);
+
+        // Merging
+        // Syntax
+        // Object.assign(dest, source-1, source-2, ..., source-N);
+        let target = {
+            designation: "Full-stack developer",
+        }
+        let sourceOne = {
+            id: 123,
+            name: "Jack"
+        }
+        let sourceTwo = {
+            name: "John"
+        }
+        let sourceThree = {
+            isAdmin: true
+        }
+        console.log(target);
+        console.log(sourceOne);
+        console.log(sourceTwo);
+        console.log(sourceThree);
+        Object.assign(target, sourceTwo, sourceOne, sourceThree);
+        console.log(target);
+
+    </script>
+</body>
+
+</html>

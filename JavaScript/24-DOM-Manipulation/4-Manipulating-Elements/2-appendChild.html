@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="appendChild()">
+    <title>appendChild()</title>
+</head>
+
+<body>
+    <h1>appendChild()</h1>
+    <ul class="subjects">
+
+    </ul>
+
+    <script>
+        // appendChild() => append a node to a list of child nodes of the specified parent node
+        // node => element
+
+        let subjects = document.querySelector(".subjects");
+
+        function createChildNode(text) {
+            let li = document.createElement("li");
+            li.textContent = text; // <li>English</li>
+            return li; // <li>English</li>
+        }
+        subjects.appendChild(createChildNode("English")); // <li>English</li>
+        subjects.appendChild(createChildNode("Maths")); // <li>Maths</li>
+        subjects.appendChild(createChildNode("Physics"));
+        subjects.appendChild(createChildNode("Chemistry"));
+    </script>
+</body>
+
+</html>

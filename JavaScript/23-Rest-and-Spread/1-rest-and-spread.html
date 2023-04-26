@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Rest and Spread">
+    <title>Rest and Spread</title>
+</head>
+
+<body>
+    <h1>Rest and Spread</h1>
+
+    <script>
+        // Rest and Spread
+        // Rest
+        // Rest as parameter
+        // function add(a, b) {
+        //     return a + b;
+        // }
+        // console.log(add(5, 10, 10, 5, 6));
+
+        // function add(a, b, ...c) {
+        //     console.log(a)
+        //     console.log(b)
+        //     console.log(c);
+        //     c.forEach(e => console.log(e));
+        // }
+        // add(10, 12, 3, 4, 5);
+
+        // function sum(...args) {
+        //     let sum = 0;
+        //     args.forEach(arg => sum += arg);
+        //     console.log(sum);
+        // }
+        // sum(1, 2); // 3
+        // sum(1, 2, 3); // 6
+        // sum(1, 2, 3, 4); // 10
+
+        // function userDetails(firstName, lastName, ...args) {
+        //     console.log(firstName);
+        //     console.log(lastName);
+        //     console.log(args);
+        //     console.log(`age: ${args[0]}`);
+        //     console.log(`isAdmin: ${args[1]}`);
+        //     console.log(`City: ${args[2]}`);
+        // }
+        // userDetails("John", "Jack", 25, true, "Chennai");
+
+        // arguments => user passed arguments as an array
+        // function userDetails() {
+        //     console.log(arguments[0])
+        //     console.log(arguments[1])
+        //     console.log(arguments[2])
+        //     console.log(arguments[3])
+        //     console.log(arguments[4])
+        //     console.log(arguments.length)
+        // }
+        // userDetails("John", "Jack", 25, true, "Chennai");
+
+        // Spread
+        // console.log(Math.min(-1, -2, 4, 5, 9, 0));
+        // console.log(Math.max(...[-1, -2, 4, 5, 9, 0], ...[-4, 12, 23, 18]));
+
+        // Merging Array
+        // let arrOne = [1, 2, 3];
+        // let arrTwo = [4, 5, 6];
+        // let arrThree = [7, 8, 9];
+        // console.log(arrOne)
+        // console.log(arrTwo)
+        // console.log(arrThree)
+        // console.log([...arrOne, ...arrTwo, ...arrThree]);
+
+        // Array Copy
+
+        // let subjectsOne = ["English", "Maths"];
+        // let subjectsTwo = subjectsOne;
+        // console.log(subjectsOne);
+        // console.log(subjectsTwo);
+        // subjectsOne.push("Physics", "Chemistry");
+        // console.log(subjectsOne);
+        // console.log(subjectsTwo);
+
+        // let subjectsOne = ["English", "Maths"];
+        // let subjectsTwo = [...subjectsOne];
+        // console.log(subjectsOne);
+        // console.log(subjectsTwo);
+        // subjectsOne.push("Physics", "Chemistry");
+        // console.log(subjectsOne);
+        // console.log(subjectsTwo);
+
+        // Object copy
+        let userOne = {
+            name: "John",
+            age: 25,
+            isAdmin: false
+        }
+        // let userTwo = userOne;
+        // console.log(userOne);
+        // console.log(userTwo);
+        // userOne.city = "Chennai";
+        // console.log(userOne);
+        // console.log(userTwo);
+        let userTwo = { ...userOne, designation: "Developer" };
+        userOne.city = "Chennai";
+        console.log(userOne);
+        console.log(userTwo);
+
+        // let name = "John";
+        // console.log([...name]);
+        // console.log(name.split(""));
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

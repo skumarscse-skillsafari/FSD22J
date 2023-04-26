@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Logical Operators">
+    <title>Logical Operators</title>
+</head>
+
+<body>
+    <h1>Logical Operators</h1>
+
+
+    <script>
+        // Logical Operators
+        // 4 Types
+        // OR (||) => Binary operator
+        // AND (&&) => Binary Operator
+        // NOT (!) => Unary Operator
+        // Returns result as Boolean => true / false
+        // Results of logical operations always be Boolean => true or false
+        // Nullish Coalesing (??)
+
+        // if (condition) {
+        //     // if block
+        //     // condition == true
+        // } else {
+        //     // else block
+        //     // condition == false
+        // }
+
+        // 1. No need to use "{...}" if there is only one statement in the if or else block
+        // 2. Else can't be used without "if"
+        // 3. Can use "if" without "else"
+
+        // if (25 > 15) {
+        //     console.log("hello");
+        //     console.log("Num-1 is greaterthan Num-2");
+        // } else
+        //     console.log("Num-1 is lessthan Num-2");
+
+        // Syntax
+        // if...else if... else
+        // Multiple checks or multiple condition
+        // if (condition) {
+        //     // if block
+        //     // condition == true, execute the block and exit
+        //     // condition == false, check next condition
+        // } else if (another condition) {
+        //     // another condition block
+        //     // condition == false and another condition == true
+        //     // another condition == false, check next condition
+        // } else if (onemore condition) {
+        //     // onemore condition block
+        //     // another condition == false and onemore condition == true
+        //     // onemore condition == false, execute else block
+        // } else {
+
+        // }
+        // let firstName = "John";
+        // let lastName = "Jack";
+        // let age = 30;
+        // if (firstName == "john") { // condition-1
+        //     console.log("Execute condition-1 block and exit");
+        // } else if (lastName == "jack") { // condition-2
+        //     console.log("Execute condition-2 block and exit");
+        // } else if (age > 45) { // condition-3
+        //     console.log("Execute condition-3 block and exit");
+        // } else {
+        //     console.log("Unauthorized user entry");
+        // }
+
+        // OR => ||
+        // if (10 > 5) { // true
+        //     console.log("if block");
+        //     if (10 > 5) {
+        //         console.log("another if block");
+        //     }
+        // }
+
+        // if (10 > 15 || 10 < 5) { // true || true => true
+        //     console.log("if and another if block");
+        // }
+        // true || true => true
+        // true || false => true
+        // false || true => true
+        // false || false => false
+
+        // console.log(10 == 5 || 5 == 1 || 6 > 60 || 50 < 20);
+        // false || false
+        //          false || false
+        //                   false  || false
+        //                             false
+        // if (1 || 0) { // true || false => true
+        //     console.log("if block");
+        // }
+
+        // let firstName = prompt("Enter firstName", "John");
+        // let lastName = prompt("Enter lastName", "Jack")
+        // if (firstName == "John" || lastName == "Jack") {
+        //     console.log("Both firstName and lastName are correct");
+        // } else {
+        //     console.log("Both firstName and lastName are incorrect");
+        // }
+
+        // Execution of OR "||"
+        // Expression => 10 == 5 || 5 == 1 || 6 > 60 || 50 < 20
+        // Left-Right
+        // Checks for first truthy value in the expression.
+        // if first truthy value found, return the value of the operand and exit
+        // if none of the operand turns truthy, return the last operand value
+        // let result = 0 || 10 > 15 || false || 5 > 10;
+        // console.log(result);
+
+        // let user = prompt("Enter user name", "John");
+        // let resultOne = user || "Anonymous User";
+        // console.log(resultOne);
+
+        // Short-Circuiting
+        // 2 operands
+        // if 1st operand turns "true" => return value of 1st operand else 2nd operand value
+        // if both operand are false => return 2nd operand value
+        // console.log(0 || "John");
+        // console.log(0 || 1);
+        // console.log("John" || "Anonymous User");
+        // console.log(false || 0);
+        // console.log(false || true);
+
+        // Logical AND Operator => &&
+        // Binary Operator => Two operands
+        // 10 > 5 && 2 > 1 => true && true => true
+        // 10 > 5 && 1 > 2 => true && false => false
+        // 5 > 10 && 2 > 1 => false && true => false
+        // 5 > 10 && 1 > 2 => false && false => false
+
+        // console.log(10 > 5 && 10 > 8); // true && true => true
+        // console.log(10 < 5 && 12 > 10); // false && true => false
+
+        // if userName == "John" and isAdmin == true => Log-in else Unauthorized user
+        // let userName = prompt("Enter username", "John");
+        // let isAdmin = prompt("Are you admin?. Enter true/false", true);
+        // console.log(userName);
+        // console.log(isAdmin);
+        // if (userName == "John" && isAdmin == "true") {
+        //     console.log("Authorized User");
+        // } else {
+        //     console.log("Unauthorized User");
+        // }
+
+        // Looks for first "falsy" value.
+        // Left-right
+        // In a expression, logical AND operator looks for "falsy" value, return the value of the operand and exit
+        // if none of the operand in the expression turns "false", return last operand value
+
+        // console.log(1 && "Hello" && 15 > 5 && 5 < 20 && "World");
+
+        // Short Circuiting
+        // operand-1 && operand-2
+        // if, operand-1 false, return operand-1 value and exit
+        // if, operand-1 true, retun operand-2 value
+        // console.log(0 && 1); // 0
+        // console.log("John" && "Jack");// Jack
+        // let username = "John";
+        // if (1 && username) {
+        //     console.log("If block")
+        // } else {
+        //     console.log("Else block");
+        // }
+
+        // if (true) { "Hello" };
+        // 'Hello'
+        // if("hello") { "World" };
+        // 'World'
+        // if(1) { "World" };
+        // 'World'
+        // if(0) { "World" };
+        // undefined
+        // if("1") { "World" };
+        // 'World'
+        // if(" ") { "World" };
+        // 'World'
+
+        // Logical NOT => "!"
+        // Unary operator
+        // Syntax
+        // !true => false
+        // !false => true
+        // console.log(!(10 < 20)); // !true => false
+
+        // if (!0) {
+        //     console.log("If block");
+        // } else {
+        //     console.log("Else Block");
+        // }
+
+        // Write a JavaScript Program
+        // User is eligible to donate blood => BG = O+
+        // age >= 18
+        // bloodGroup = O+
+        // weight > 45
+        // lastDonate >= 6 months
+        // let name = prompt("Enter donor name", "");
+        // let age = +prompt("Enter age", 18);
+        // let blodGroup = prompt("Donor BG is O+ve? (true/false)", true);
+        // let weight = +prompt("Donor weight?", 45);
+        // let lastDonate = +prompt("Last donate date (mention month)", 6);
+        // if (age >= 18 && blodGroup == "true" && weight >= 45 && lastDonate >= 6) {
+        //     console.log("----------------------------------");
+        //     console.log(`Donor name: ${name}`);
+        //     console.log(`Donor age: ${age}`);
+        //     console.log(`Donor Blood Group: ${blodGroup}`);
+        //     console.log(`Donor weight: ${weight}`);
+        //     console.log(`Last Donate month: ${lastDonate}`);
+        //     console.log("----------------------------------");
+        //     console.log(`Donor: ${name} is eligible to donate the blood`);
+        // } else {
+        //     console.log("Not Eligible to donate the blood");
+        // }
+
+        // Nullish Coalescing => Check the variable defined with value
+        // ??
+        // Syntax
+        // a ?? b => a and b are variable
+        // if "a" is defined, return the value of "a" and exit
+        // if "a" is not defined, return the value of "b"
+
+        let firstName;
+        let lastName = "Jack";
+        console.log(firstName ?? lastName);
+
+        let a = 0;
+        let b;
+        console.log(a ?? b); // 0
+
+        console.log(a || b); // undefined
+
+        console.log(a && b); // 0
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Dynamic Select Element" />
+    <title>Dynamic Select Element</title>
+  </head>
+  <body>
+    <h1>Dynamic Select Element</h1>
+    <h2>Enter option value and text:</h2>
+    <form action="#">
+      <p>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="Enter option value and text"
+        />
+      </p>
+      <p>
+        <button id="addSubject">Add Subject</button>
+      </p>
+      <hr />
+      <h2>The options are:</h2>
+      <p>
+        <select name="subjects" id="subjects" multiple></select>
+      </p>
+      <p>
+        <button id="removeSubject">Remove Subject</button>
+      </p>
+    </form>
+
+    <script>
+      // Dynamic Select Element
+      // Creating Options
+      // 1. createElement()
+      // 2. new Options()
+
+      // Create
+      // let optionEle = document.createElement("option"); // <option></option>
+      // let optionText = document.createTextNode("option Text")
+      // let optionText = document.createTextNode("Maths");
+      // optionEle.appendChild(optionText);
+      // optionEle.value = "Maths";
+      // optionEle.setAttribute("value", "Maths");
+      // console.log(optionEle);
+
+      // remove
+      // 1. remove(index)
+      // 2. selectEle.options[index] = null
+
+      // new Option("Option Text", "Option Value")
+      //   console.log(new Option("english", "English"));
+
+      let addSubject = document.querySelector("#addSubject");
+      let removeSubject = document.querySelector("#removeSubject");
+      let subject = document.querySelector("#subject");
+      let subjects = document.querySelector("#subjects");
+
+      addSubject.addEventListener("click", (e) => {
+        e.preventDefault();
+        const newOption = new Option(subject.value, subject.value);
+        console.log(newOption);
+        // add(element, reference)
+        subjects.add(newOption, undefined);
+        subject.value = "";
+        subject.focus();
+      });
+
+      removeSubject.addEventListener("click", (e) => {
+        e.preventDefault();
+        let eleStatus = [];
+        console.log(subjects.options);
+        for (let i = 0; i < subjects.options.length; i++) {
+          eleStatus[i] = subjects.options[i].selected;
+        }
+        console.log(eleStatus);
+
+        let index = subjects.options.length;
+        while (index--) {
+          if (eleStatus[index]) {
+            subjects.remove(index);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Array - Methods">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <h1>Array Methods</h1>
+
+    <script>
+        // Array Methods
+        // pop()/push()
+        // shift()/unshift()
+
+        // delete
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // console.log(subjects);
+        // delete subjects[1];
+        // delete subjects[2];
+        // console.log(subjects);
+        // splice
+        // extract sub-array
+        // delete some elements
+        // delete and add new elements
+        // Syntax
+        // arr.splice(start, deleteCount, element-1, element-2, ..., element-N);
+        // delete the elements
+        // let arr = [1, 2, 3, 4, 5];
+        // //         0  1  2  3  4
+        // console.log(arr);
+        // // delete
+        // console.log(arr.splice(1, 3)); // [2, 3, 4]
+        // console.log(arr);
+
+        // delete and insert
+        // let arr = [1, 2, 3, 4, 5];
+        // //         0  1  2  3  4
+        // arr.splice(2, 3, 6, 7, 8);
+        // console.log(arr);
+
+        // only insert
+        // let arr = [1, 2, 3, 4, 5];
+        // //         0  1  2  3  4
+        // arr.splice(4, 0, 6, 7, 8);
+        // console.log(arr); // [ 1, 2, 3, 4, 6, 7, 8, 5]
+
+        // // negative insert
+        // arr.splice(-3, 2, 9, 10);
+        // console.log(arr);
+
+        // slice => get the sub-array
+        // Syntax
+        // arr.slice(start, end(not included))
+        // let arr = [1, 2, 3, 4, 5];
+        // //         0  1  2  3  4
+        // // arr.slice(1, 4);
+        // console.log(arr.slice(1, 4)); // [2, 3, 4]
+
+        // // without end index
+        // console.log(arr.slice(2)); // [3, 4, 5]
+
+        // // negative index
+        // console.log(arr.slice(-4, 4)); // [2, 3, 4]
+
+        // concat()
+        // combine 2 or more array into a single array
+        // Syntax
+        // baseArray.concat(...arrays);
+        // let arr = [1, 2, 3];
+        // console.log(arr.concat([4, 5, 6], [7, 8, 9]));
+
+        // forEach() => Iterating array type of elements
+        // callback => function inside another function or passing a function as a parameter to
+        // another function
+        // Syntax
+        /*
+            arr.forEach(function (item, index, array) {
+                // body of callback function
+            })
+        */
+
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // Access Element, Index and Array
+        // subjects.forEach(function (element, index, array) {
+        //     // console.log(`The Element is: ${element}`);
+        //     // console.log(`The index is: ${index}`);
+        //     // console.log(`The Array is: ${array}`);
+        //     // console.log("-----------------------");
+        // });
+
+        // Access the element
+        // subjects.forEach((element) => console.log(`The element is: ${element}`));
+
+        // Access the index
+        // subjects.forEach((element, index) => console.log(index));
+
+        // Access array
+        // subjects.forEach((ele, index, arr) => console.log(arr));
+
+
+        // Searching in array
+        // indexOf()
+        // lastIndexOf()
+        // includes()
+
+        // indexOf() => find the index of the element
+        // Syntax
+        // arr.indexOf(searchElement, startIndex) => index
+        // let fruits = ["Apple", "Orange", "Apple", "Mango", "Banana"];
+        // console.log(fruits.indexOf("Orange")); // 1
+        // console.log(fruits.indexOf("Apple")); // 0
+        // console.log(fruits.lastIndexOf("Apple")); // 2
+
+        // console.log(fruits.indexOf("Apple", 1)); // 2
+        // console.log(fruits.indexOf("fruit")); // -1
+
+        // // includes() => boolean
+        // // arr.includes(searchElement, startIndex) => exists => true / not exists => false
+        // console.log(fruits.includes("Orange")); // true
+        // console.log(fruits.includes("fruit")); // false
+
+
+        // find()
+        // findIndex()
+        // findLastIndex()
+
+        // find() => iterates the element of the given array one by one and check the condition
+        // user defined
+        // return one element
+        // if condition turns true => return the value in the current iteration and exists the iteration
+        // if condition turns false => return undefined
+
+        // searchElement => morethan one occurance, only the first occured element returned
+        //
+        // Syntax
+        /*
+            arr.find(function (element, index, array) {
+                // condition
+                // true => return my searching element
+                // false => return undefined
+            })
+        */
+        // let arrNumbers = [1, 2, 3, 4, 5, 1, 1];
+        // let searchElement = +prompt("Enter the element to search"); // 1
+        // let result = arrNumbers.find(function (ele, index) { // 1
+        //     // console.log(`The index => ${index}: The value => ${ele}`);
+        //     return ele === searchElement; // 1 === 1
+        // });
+        // if (result) {
+        //     console.log(`The user searched element: ${searchElement} is found in the array`);
+        // } else {
+        //     console.log(`The user searched element: ${searchElement} is not found in the array`);
+        // }
+
+        // let users = [
+        //     {
+        //         id: 1,
+        //         name: "John",
+        //         age: 23,
+        //         isAdmin: false
+        //     },
+        //     {
+        //         id: 2,
+        //         name: "Jack",
+        //         age: 25,
+        //         isAdmin: true
+        //     },
+        //     {
+        //         id: 3,
+        //         name: "Mary",
+        //         age: 20,
+        //         isAdmin: true
+        //     },
+        //     {
+        //         id: 4,
+        //         name: "Robert",
+        //         age: 21,
+        //         isAdmin: false
+        //     },
+        //     {
+        //         id: 5,
+        //         name: "Prince",
+        //         age: 18,
+        //         isAdmin: true
+        //     }
+        // ]
+        // Entering user id => get the corresponding user details
+        // let searchId = +prompt("Enter user id: (between 1 and 5)");
+        // let foundUser = users.find((user) => { // user = { id: 1, name:.., age:..., isAdmin: ...}
+        //     return user.id === searchId;
+        // });
+        // console.log(`The user with the id: ${searchId} is => ${JSON.stringify(foundUser)}`);
+        // let searchId = +prompt("Enter user id: (between 1 and 5)");
+        // let userIndex = users.findIndex((user) => user.id == searchId);
+        // console.log(userIndex);
+
+        // filter() => array of elements
+        // Syntax
+        // arr.filter(function(item, index, array) {
+        // condition => true => return current element in the iteration as array
+        // condition => false => return empty array
+        //})
+
+        // find() vs filter()
+        // find()
+        // come out of the iteration , if the matches found
+        // return only first occured match, even it has many matches
+        // always has result as single element (if matches found) or undefined (matches not found)
+
+        // filter()
+        // iterate untill the last element present in the array
+        // return all the occured match as an array
+        // always return array of elements (if matches found) or empty array (matches not found)
+
+        // let userAge = users.filter((user) => user.age >= 30); // return array of users whose age is ">" 20
+        // console.log(userAge);
+
+        // let fruits = ["Apple", "Orange", "Apple", "Mango", "Orange", "Banana"];
+        // console.log(fruits);
+        // let apples = fruits.filter((apple) => apple === "Apple");
+        // console.log(apples);
+
+        // Transform an array
+        // with the given array, we can able to create new array
+        // map()
+        // return new array
+        // Syntax
+        /*
+            arr.map(function (item, index, array) {
+                return new element
+            })
+        */
+        // let subjects = ["English", "Maths", "Physics", "Chemistry", "Computer"];
+        // let subjectsLength = subjects.map((subject) => subject.length);
+        // console.log(subjectsLength);
+        // let upperCase = subjects.map((subject) => subject.toUpperCase());
+        // console.log(upperCase);
+
+        // let users = [
+        //     {
+        //         id: 1,
+        //         name: "John",
+        //         age: 23,
+        //         isAdmin: false
+        //     },
+        //     {
+        //         id: 2,
+        //         name: "Jack",
+        //         age: 25,
+        //         isAdmin: true
+        //     },
+        //     {
+        //         id: 3,
+        //         name: "Mary",
+        //         age: 20,
+        //         isAdmin: true
+        //     },
+        //     {
+        //         id: 4,
+        //         name: "Robert",
+        //         age: 21,
+        //         isAdmin: false
+        //     },
+        //     {
+        //         id: 5,
+        //         name: "Prince",
+        //         age: 18,
+        //         isAdmin: true
+        //     }
+        // ];
+        // let userNameArray = users.map((user) => user.name);
+        // console.log(userNameArray);
+        // let userAgeArray = users.map((user) => user.age);
+        // console.log(userAgeArray);
+
+        // spread
+        // ...varName;
+        // add city: "Chennai" to all the elements with isAdmin: true
+        // add city: "Bangalore" to all the elements with isAdmin: false
+        // let newArrayCity = users.map((user) => {
+        //     return {
+        //         ...user,
+        //         city: "Chennai"
+        //     }
+        // });
+        // console.log(newArrayCity);
+
+        // let newCityArray = users.map((user) => {
+        //     if (user.isAdmin) {
+        //         return {
+        //             ...user,
+        //             city: "Chennai"
+        //         }
+        //     } else {
+        //         return {
+        //             ...user,
+        //             city: "Bangalore"
+        //         }
+        //     }
+        // });
+        // console.log(newCityArray);
+
+        // // filter()
+        // // element => with age = 20 and age = 25
+        // let newAgeArray = users.filter((user) => user.age == 20 || user.age == 25);
+        // console.log(newAgeArray);
+
+
+        // let fruits = ["Apple", "Orange", "Apple", "Mango", "Orange", "Banana"]
+        // // index of => "Apple"
+        // let indexArray = fruits.filter((item, index, arr) => {
+        //     if (item == "Apple") {
+        //         return index;
+        //     }
+        // });
+        // console.log(indexArray);
+
+        // reverse() => reverse the given array elements
+        // let arrNum = [1, 2, 3, 4, 5];
+        // console.log(arrNum.reverse()); // [5, 4, 3, 2, 1]
+
+        // split("delimiter") => String to Array
+        // "This is a paragraph" => ["This", "is", "a", "paragraph"]
+        // let para = "This is a paragraph";
+        // let paraArr = para.split(" ");
+        // console.log(paraArr);
+
+        // let fruits = "Apple, Orange, Mango, Banana"; //
+        // let fruitsArr = fruits.split(", ");
+        // console.log(fruitsArr);
+
+        // let name = "John,Jack";
+        // console.log(name.split("")); // ['J', 'o', 'h', 'n', ',', 'J', 'a', 'c', 'k']
+        // for (const ele of name.split("")) {
+        //     console.log(ele);
+        // }
+
+        // join("glue") => Array to String
+        // let fruits = ["Apple", "Orange", "Mango", "Banana"];
+        // console.log(fruits.join(", "));
+
+        // reduce()
+        // Syntax
+        /*
+            arr.reduce(function(accumulator, item, index, array) {
+                // logic
+            }, [intialValue])
+        */
+
+        // arr = [1, 2, 3, 4, 5] => 15
+        let arr = [1, 2, 3, 4, 5];
+        let sum = arr.reduce(function (acc, item) {
+            // 1 => acc = initialValue, item = firstElement
+            // 1 => acc = 0, item = 1
+            // 2 => acc = 1, item = 2
+            // 3 => acc = 3, item = 3
+            // 4 => acc = 6, item = 4
+            // 5 => acc = 10, item = 5
+            return acc + item;
+            // 0 + 1 => 1
+            // 1 + 2 => 3
+            // 3 + 3 => 6
+            // 6 + 4 => 10
+            // 10 + 5 => 15
+        }, 0);
+        // initialValue = 15
+        console.log(sum); // 15
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Radio Button">
+    <title>Radio Button</title>
+</head>
+
+<body>
+    <h1>Radio Button</h1>
+    <form action="#">
+        <p>
+            <label for="gender">Select Gender:</label>
+            <input type="radio" name="gender" id="male" value="Male">Male
+            <input type="radio" name="gender" id="female" value="Female">Female
+            <input type="radio" name="gender" id="not" value="Not prefer to say">Not prefer to say
+        </p>
+        <p>
+            <button id="btn">Click</button>
+        </p>
+    </form>
+    <hr>
+    <p id="result"></p>
+
+    <script>
+        // Radio Button
+        let radioBtns = document.querySelectorAll("[name='gender']");
+        console.log(radioBtns);
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let value = null;
+            radioBtns.forEach((radioBtn) => {
+                if (radioBtn.checked) {
+                    value = document.querySelector("#result").textContent = `User Selected: ${radioBtn.value}`;
+                }
+            })
+            if (!value) {
+                document.querySelector("#result").textContent = `User Not Selected Any Option`;
+            }
+        })
+    </script>
+</body>
+
+</html>

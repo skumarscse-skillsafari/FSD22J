@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS Selectors: Adjacent Sibling Selector">
+    <title>CSS Selectors: General Adjacent Sibling Selector</title>
+    <style>
+        /* 
+            CSS Selectors: General Adjacent Sibling Selector
+            // Properties will be applied only to the immediate sibling of the adjacent element (top-bottom)
+            Syntax
+            siblingrOne ~ siblingTwo {
+                propertyName: propertyValue;
+            }
+        */
+        .container>.divTwo>h2~ul {
+            color: red;
+        }
+
+        .divOne~.divTwo {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Selectors: General Adjacent Sibling Selector</h1>
+    <div class="container">
+        <div class="divOne">
+            <h2>This is sub-heading</h2>
+            <p>This is a paragraph</p>
+            <ol>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Mango</li>
+            </ol>
+        </div>
+        <div class="divTwo">
+            <h2>This is another sub-heading</h2>
+            <p>This is another paragraph</p>
+            <ul>
+                <li>English</li>
+                <li>Maths</li>
+                <li>Physics</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

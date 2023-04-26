@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Profile Page" />
+    <title>Profile Page</title>
+  </head>
+  <body>
+    <h1>Profile Page</h1>
+    <h2>Welcome, <span></span></h2>
+    <button id="signOut">SignOut</button>
+
+    <script>
+      let urlParams = new URLSearchParams(location.search);
+      let [id] = urlParams.values();
+      console.log(id);
+      let userDetails = JSON.parse(sessionStorage.getItem(id));
+      console.log(userDetails);
+      document.querySelector("span").textContent = userDetails.name;
+
+      let signOut = document.querySelector("#signOut");
+      signOut.addEventListener("click", (e) => {
+        e.preventDefault();
+        sessionStorage.removeItem(id);
+        window.location.href = "./login.html";
+      });
+    </script>
+  </body>
+</html>

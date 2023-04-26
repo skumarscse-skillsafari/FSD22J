@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" name="Object Methods">
+    <title>Object Methods</title>
+</head>
+
+<body>
+    <h1>Object Methods</h1>
+
+    <script>
+        // Object Methods
+        // let user = {
+        //     id: 1,
+        //     name: "John",
+        //     age: 25,
+        //     address: {
+        //         city: "Bangalore",
+        //         state: "Karnataka"
+        //     }
+        // }
+        // console.log(user);
+
+        // Object => values => Primitive and Non-primitive
+        //                  => function
+        // let user = {
+        //     id: 1,
+        //     name: "John",
+        //     age: 25,
+        //     address: {
+        //         city: "Bangalore",
+        //         state: "Karnataka"
+        //     },
+        //     // message: function () {
+        //     //     console.log("I am from message propertyName");
+        //     // }
+        //     // Short-hand
+        //     message() {
+        //         console.log("I am from message propertyName");
+        //     }
+        // }
+        // console.log(user);
+        // console.log(user.name); // John
+        // console.log(user.address); // { city: "Bangalore", state: "Karnataka"}
+        // user.message(); // I am from message propertyName
+
+        // this => "keyword"
+        // refers the "current" object in the javascript
+        let user = {
+            id: 1,
+            name: "Jack",
+            age: 25,
+            userDetails() {
+                console.log(this.id); // 1 // this === user
+                console.log(this.name); // Jack
+                console.log(this.age); // 25
+            }
+        }
+        user.userDetails();
+
+        // Ex - 2
+        // Arrow funtion => "this" not works
+        let fruits = {
+            apple: 25,
+            orange: 30,
+            mango: 50,
+            fruitsPrice() {
+                console.log(this.apple + this.orange + this.mango);
+            }
+        }
+        fruits.fruitsPrice();
+
+    </script>
+</body>
+
+</html>

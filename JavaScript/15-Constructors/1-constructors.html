@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Constructor">
+    <title>Constructor</title>
+</head>
+
+<body>
+    <h1>Constructor</h1>
+
+    <script>
+        // Constructor
+        // 1. Constructor looks similar like a function
+        // 2. Name of the Constructor must be starts with Uppercase
+        // 3. Initialize or call the Constructor method by using "new" keyword
+        // 4. no return keyword
+
+        // Function Declaration
+        // function userDetails() {
+        //     console.log("User details")
+        // }
+        // Called the Function
+        // userDetails();
+
+        // Constructor Declaration
+        // function UserDetails() {
+        // logics
+        // }
+        // Call the Constructor Method
+        // let varName = new UserDetails();
+
+        // We can pass the values to the Constructor method at the run time
+        // Create object properties
+
+        // Syntax
+        // function ConstructorName(parameters) {
+        // assign the values to the properties
+        //}
+
+        // Call the Constructor method
+        // new ConstructorName(argument)
+
+        // function User(name, age, isAdmin, city) {
+        //     // this = {}
+        //     this.name = name;
+        //     this.age = age;
+        //     this.isAdmin = isAdmin;
+        //     this.city = city;
+        //     // this = { username: "John", userage: 25, userisAdmin: true, usercity: "Chennai" }
+        //     // return this;
+        // }
+
+        // let john = new User("John", 25, true, "Chennai");
+        // console.log(john);
+        // let jack = new User("Jack", 28, false, "Mumbai");
+        // console.log(jack);
+
+        // Function as property
+        function Student(id, name, dept, age) {
+            this.id = id;
+            this.name = name;
+            this.dept = dept;
+            this.age = age;
+            this.studentDetails = function () {
+                console.log(`The student with the id: ${this.id} and name: ${this.name} of dept: ${this.dept} has ${this.age} age`);
+            }
+        }
+        let john = new Student(123, "John", "CSE", 25);
+        john.studentDetails();
+        let jack = new Student(124, "Jack", "IT", 20);
+        jack.studentDetails();
+        let mary = new Student(125, "Mary", "ECE", 21);
+        mary.studentDetails();
+
+
+        // Calculator
+        // read(a, b);
+        // sum()
+        // sub()
+        // mul()
+        // div()
+
+        function Calculator() {
+            // this = {}
+            this.read = function () {
+                this.a = +prompt("Enter value one", 1);
+                this.b = +prompt("Enter value two", 1);
+            }
+            this.sum = function () {
+                return this.a + this.b;
+            }
+            this.sub = function () {
+                return this.a - this.b;
+            }
+            this.mul = function () {
+                return this.a * this.b;
+            }
+            this.div = function () {
+                return this.a / this.b;
+            }
+        }
+
+        let calculator = new Calculator();
+        calculator.read()
+        console.log(calculator.sum());
+        console.log(calculator.sub());
+        console.log(calculator.mul());
+        console.log(calculator.div());
+
+
+
+    </script>
+</body>
+
+</html>

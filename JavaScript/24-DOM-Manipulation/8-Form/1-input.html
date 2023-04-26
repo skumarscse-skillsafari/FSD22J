@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Handling Form - Elements">
+    <title>Handling - Form - Elements</title>
+</head>
+
+<body>
+    <h1>Handling - Form - Elements</h1>
+    <form action="#" id="form">
+        <p><input type="text" name="firstName" id="firstName" placeholder="Enter Firstname"></p>
+        <p><input type="text" name="lastName" id="lastName" placeholder="Enter Lastname"></p>
+        <p><input type="email" name="email" id="email" placeholder="Enter email"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <hr>
+    <p id="result"></p>
+
+    <script>
+        // /1-input.html?firstName=eadfa&lastName=Skillsafari&email=edukeys%40skillsafari.in#
+        let formEle = document.querySelector("#form");
+        // Access all the fields in the form
+        console.log(document.forms);
+
+        formEle.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // Method - 1 (Access form value)
+            console.log(document.forms[0][0].value);
+            console.log(document.forms[0][1].value);
+            console.log(document.forms[0][2].value);
+            // Method -2 (Access form value)
+            let firstName = document.querySelector("#firstName");
+            console.log(firstName.value);
+
+            // Method - 3 (Access form value by index)
+            // console.log(formEle);
+            // console.log(formEle.elements[0].value);
+            // console.log(formEle.elements[1].value);
+            // console.log(formEle.elements[2].value);
+
+            // Access form value by "name" attribute value
+            // console.log(formEle.elements["firstName"].value);
+            // console.log(formEle.elements["lastName"].value);
+            // console.log(formEle.elements["email"].value);
+
+            // Access form value by "id" attribute value
+            console.log(formEle.elements["firstName"].value);
+            console.log(formEle.elements["lastName"].value);
+            console.log(formEle.elements["email"].value);
+        })
+
+        let firstName = document.forms[0][0];
+        firstName.addEventListener("change", (e) => {
+            console.log(e.target.value);
+            document.querySelector("#result").textContent = e.target.value;
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

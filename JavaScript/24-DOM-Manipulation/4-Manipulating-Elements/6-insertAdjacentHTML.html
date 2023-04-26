@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="insertAdjacentHTML">
+    <title>insertAdjacentHTML</title>
+</head>
+
+<body>
+    <h1>insertAdjacentHTML</h1>
+    <ul id="list">
+        <li>English</li>
+        <li>Business Maths</li>
+    </ul>
+
+    <script>
+        // insertAdjacentHTML()
+        // parse a text as HTML and insert the resulting nodes into the document at a specified position
+        // Syntax
+        // element.insertAdjacentHTML(positionName, text)
+        // positionName => beforebegin, afterbegin, beforeend, afterend
+        // beforebegin => before the element
+        // afterbegin => before its first child of the element
+        // beforeend => after the last child of the element
+        // afterend => after the element
+
+        // text => accepts string and parse as HTML element
+
+        let list = document.querySelector("#list");
+        list.insertAdjacentHTML("beforebegin", "<h2>List of Subjects</h2>");
+        list.insertAdjacentHTML("afterbegin", "<li>Physics</li>");
+        list.insertAdjacentHTML("beforeend", "<li>Chemistry</li>");
+        list.insertAdjacentHTML("afterend", "<hr />");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Check box">
+    <title>Check box</title>
+</head>
+
+<body>
+    <h1>Check box</h1>
+    <form action="#">
+        <p>Select the Subject(s)</p>
+        <input type="checkbox" name="english" id="english" value="English">English
+        <input type="checkbox" name="maths" id="maths" value="Maths">Maths
+        <input type="checkbox" name="physics" id="physics" value="Physics">Physics
+        <input type="checkbox" name="chemistry" id="chemistry" value="Chemistry">Chemistry
+        <p>
+            <button id="btn">Click</button>
+        </p>
+    </form>
+    <hr>
+    <p id="result"></p>
+
+    <script>
+        // Check box
+        let subjects = document.querySelectorAll("[type='checkbox']");
+        console.log(subjects);
+        let btn = document.querySelector("#btn");
+        let result = document.querySelector("#result");
+        let selectedSubjects = [];
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            subjects.forEach((subject) => {
+                if (subject.checked) {
+                    selectedSubjects.push(subject.value);
+                }
+            })
+            console.log(selectedSubjects);
+            result.textContent = selectedSubjects.length != 0 ? `User Selected Subjects: ${selectedSubjects.join(" ")}` : `User not selected Any Subject`;
+        })
+
+
+    </script>
+</body>
+
+</html>

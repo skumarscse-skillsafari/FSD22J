@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Change Event" />
+    <title>Change Event</title>
+  </head>
+  <body>
+    <h1>Change Event</h1>
+    <form action="#">
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username"
+        />
+      </p>
+      <hr />
+      <p>Select Subject(s)</p>
+      <p>
+        <input
+          type="checkbox"
+          name="subject-1"
+          id="subject-1"
+          value="English"
+        />English
+      </p>
+      <p>
+        <input
+          type="checkbox"
+          name="subject-2"
+          id="subject-2"
+          value="Maths"
+        />Maths
+      </p>
+      <p>
+        <input
+          type="checkbox"
+          name="subject-3"
+          id="subject-3"
+          value="Physics"
+        />Physics
+      </p>
+      <p>
+        <input
+          type="checkbox"
+          name="subject-4"
+          id="subject-4"
+          value="Chemistry"
+        />Chemistry
+      </p>
+      <hr />
+      <p>Select the Subject</p>
+      <select name="subjects" id="subjects">
+        <option value="English">English</option>
+        <option value="Maths">Maths</option>
+        <option value="Physics">Physics</option>
+        <option value="Chemistry">Chemistry</option>
+      </select>
+    </form>
+    <hr />
+    <p id="result"></p>
+
+    <script>
+      // Change Event
+      //   let username = document.querySelector("#username");
+      //   let result = document.querySelector("#result");
+      //   username.addEventListener("change", (e) => {
+      //     e.preventDefault();
+      //     result.textContent = username.value;
+      //   });
+      //   let result = document.querySelector("#result");
+      //   let subjects = document.querySelectorAll("[type='checkbox']");
+      //   console.log(subjects);
+      //   subjects.forEach((subject) => {
+      //     subject.addEventListener("change", (e) => {
+      //       e.preventDefault();
+      //       result.textContent += subject.value;
+      //     });
+      //   });
+      let result = document.querySelector("#result");
+      let subjects = document.querySelector("#subjects");
+      console.log(subjects);
+      subjects.addEventListener("change", function (e) {
+        e.preventDefault();
+        result.textContent = this.value;
+      });
+    </script>
+  </body>
+</html>

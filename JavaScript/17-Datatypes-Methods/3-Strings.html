@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Strings">
+    <title>Strings</title>
+</head>
+
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        // Strings
+        // 1. Double Quotes => "String in double quotes"
+        // 2. Single Quote => 'String in single quote'
+        // 3. Backticks => `String in backtick`
+
+        // length
+        // Count the number of characters in a string
+        // "String" => S-t-r-i-n-g
+        // Syntax
+        // String.length
+        // let str = "This is a string";
+        // console.log(str.length); // 16
+        // console.log("John".length); // 4
+
+        // Access the individual characters of the string
+        // 1. str[pos]
+        // 2. str.charAt(pos)
+
+        // let name = "Jack";
+        // pos => index => 0
+        // J-a-c-k
+        // 0-1-2-3
+        // console.log(name[2]); // c
+        // console.log(name[1]); // a
+        // J
+        // a
+        // c
+        // k
+        // for (let i = 0; i < name.length; i++) {
+        //     console.log(name[i]);
+        // }
+
+        // // Access the last char of any given string
+        // let str = "This is a string"
+        // console.log(str.length);
+        // console.log(str[str.length - 1]);
+        // // str.at(-1);
+        // console.log(str.at(-1));
+
+        // str.charAt(pos)
+        // let username = "SkillSafari";
+        // console.log(username.charAt(2)); // i
+        // console.log(username.charAt(7)); // f
+
+        // // Strings are immutable
+        // // Cannot be changed or modified
+        // username[3] = "L"; // l
+        // console.log(username[3]);
+        // console.log(username);
+
+        // Searching a substring
+        // substring => a single character or a group of characters
+        // let str = "This is a string";
+        // substring => "h"
+        // str.indexOf(substring) => index of the substring
+        // console.log(str.indexOf("i")); // 2
+        // indexOf(searchString: string, position?: number): number
+        // indexOf => name of the function
+        // searchString: string => parameter => string
+        // position? : number => parameter (optional) => number
+        // number => return value type
+
+        // position => from which index the searching operation must begins
+        // console.log(str.indexOf("st", 5)); // 10
+
+        // Find all the occurances of the "substr" in the given "str"
+        // let str = "This is a string";
+        // substr => 'i'
+        // 3 => 2 5 13
+        // console.log(str.indexOf("z")); // -1
+        // let substr = "i";
+        // let pos = 0;
+        // while (true) {
+        //     let foundPos = str.indexOf(substr, pos); // 14
+        //     // foundPos => -1
+        //     if (foundPos == -1) break;
+        //     console.log(`The substr ${substr} is found in POS: ${foundPos}`);
+        //     pos = foundPos + 1;
+        //     // pos => 14
+        // }
+
+        // includes(), startsWith(), endsWith()
+        // includes()
+        // str.includes(substr) => true or false
+        // let str = "This is a string";
+        // console.log(str.includes("is")); // true
+        // console.log(str.includes("T", 1)); // false
+
+        // // str.startsWith(substr) => true or false
+        // let strStart = "John";
+        // console.log(strStart.startsWith("Jo")); // true
+        // console.log(strStart.startsWith("hn", 2)); // true
+
+        // // str.endsWith(substr) => true or false
+        // let strEnd = "SkillSafari";
+        // console.log(strEnd.endsWith("ri")); // true
+
+        // Getting a substring
+        // substring(), substr(), slice()
+        // slice();
+        // Syntax
+        // str.slice(startIndex, endIndex (not included))
+        // let str = "This is a string";
+        // console.log(str.slice(3, 11));
+        // console.log(str.slice(5));
+
+        // slice() with negative values
+        // H  e   l   l   o
+        // 0  1   2   3   4 => left to right
+        //-5 -4  -3  -2  -1  => right to left
+        // let message = "Hello";
+        // console.log(message.slice(-4, -1)); // ell
+
+        // str.substring(startIndex, endIndex)
+        // let message = "Hello, how are you?";
+        // console.log(message.substring(1, 5)); // ello
+        // substring => we can give the first parameter value is greater then second parameter value
+        // console.log(message.substring(5, 1)); // ello
+        // console.log(message.slice(5, 1));
+        // substring() => not accepts negative value
+
+        // str.substr(startIndex, length)
+        // let message = "Hello, how are you?";
+        // console.log(message.substr(3, 6)); // lo, ho 
+
+        // first parameter can be a negative value
+        // console.log(message.substr(-6, 3)); // e y
+
+        // Compare the strings
+        // Compare the strings char by char
+        // J > J => same
+        // o > a => 111 > 97
+        console.log("John" > "Jack"); // true
+
+        console.log("aaa" > "aaaa"); // false
+
+        // str.codePointAt(pos)
+        let message = "Hello";
+        console.log(message.codePointAt(0)); // 72
+
+        // String.fromCodePoint(asciiValue);
+        console.log(String.fromCodePoint(72)); // "H"
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Background Image - Basics">
+    <title>CSS - Background Image - Basics</title>
+    <style>
+        /* 
+            CSS - Background Image - Basics
+        */
+        div {
+            height: 300px;
+            color: white;
+            border: 2px solid green;
+        }
+
+        .img-one {
+            background: url("./images/image-one.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-two {
+            background: url("./images/image-two\ -\ Copy.jpg");
+            background-repeat: repeat;
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            background-repeat: round;
+            background-repeat: space;
+            background-repeat: no-repeat;
+            /* background-size: cover;
+            background-size: contain; */
+            background-position: center;
+            background-position: 50% 50%;
+            background-attachment: fixed;
+        }
+
+        .img-three {
+            background: url("./images/image-three.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .demo {
+            /* 
+            background: linear-gradient, url position/size repeat attachment
+            */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(255, 100, 239, 0.44)), url(./images/image-three.jpg) center/cover no-repeat fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-one">
+        <h1>Image One</h1>
+    </div>
+    <div class="img-two">
+        <h1>Image Two</h1>
+    </div>
+    <div class="img-three">
+        <h1>Image Three</h1>
+    </div>
+    <div class="demo"></div>
+</body>
+
+</html>

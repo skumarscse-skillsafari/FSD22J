@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Weak Map and Weak Set">
+    <title>Weak Map and Weak Set</title>
+</head>
+
+<body>
+    <h1>Weak Map and Weak Set</h1>
+
+    <script>
+        // Weak Map and Weak Set
+        // Weak Map Vs Map
+        // Map => propertyNames or Key can be of any type
+        // WeakMap => propertyName or Key can be of only object
+        // let weakMap = new WeakMap();
+        // console.log(weakMap);
+        // set()
+        // get()
+        // has()
+        // delete()
+        // keys(), values(), entries() => not supported
+        // let john = { name: "John", age: 25 };
+        // let jack = { name: "Jack", age: 20 };
+        // let mary = { name: "Mary", age: 18 };
+
+        // let employees = new WeakMap();
+        // employees.set(john, "John");
+        // employees.set(jack, "Jack");
+        // employees.set(mary, "Mary");
+        // console.log(employees);
+
+        // console.log(employees.get(jack));
+
+        // console.log(employees.has(john));
+
+        // console.log(employees.delete(mary));
+        // console.log(employees);
+
+        // WeakSet
+        // WeakSet Vs Set
+        // Duplication not allowed
+        // Values must be of object
+
+        // add()
+        // has()
+        // delete()
+
+        // size, keys(), values(), entries() => not supported
+
+        let employees = new WeakSet();
+        console.log(employees);
+        let john = { name: "John", age: 25 };
+        let jack = { name: "Jack", age: 20 };
+        let mary = { name: "Mary", age: 18 };
+        employees.add(john);
+        employees.add(jack);
+        employees.add(mary);
+        employees.add(john);
+        employees.add(jack);
+        employees.add(mary);
+        console.log(employees);
+
+        console.log(employees.has(jack));
+
+        employees.delete(mary);
+        console.log(employees);
+    </script>
+</body>
+
+</html>

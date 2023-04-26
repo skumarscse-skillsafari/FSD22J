@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Desccription" content="Objects">
+    <title>Objects</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+
+    <script>
+        // Objects
+        // Object is one of the non-primitive datatype
+        // In a single variable, we can able to add more than one value
+
+        // Terms
+        // Property Name => Key
+        // Property Value => Value
+
+        // 1. Object Literals
+        // 2. Object Constructor method
+
+        // Object Literals
+        // Syntax
+        // let objName = {
+        // propertyName-1 : propertyValue-1, => Property
+        // propertyName-2 : propertyValue-2,
+        //                :
+        //                :
+        // propertyName-N : propertyValue-N,
+        // };
+
+        // Combination of all the property inside the curly braces are known as "Properties"
+        // propertyName => variableName (keywords)
+        // propertValue => primitiveValue (String, number, boolean, null, undefined, bigint)
+
+        // userDetails => objectName
+        // propertyNames => firstName, lastName, age, city
+        // propertyValues => "John", "Jack", 25, "Chennai"
+
+        // let userDetails = {
+        //     firstName: "John",
+        //     lastName: "Jack",
+        //     age: 25,
+        //     city: "Chennai"
+        // };
+        // console.log(userDetails);
+
+        // Accessing object propertyValue => (dot) method
+        // Syntax
+        // objectName.propertyName => propertyValue;
+        // console.log(userDetails.age); // 25
+        // console.log(userDetails.city); // Chennai
+
+        // Accessing object propertyValue => [square] method
+        // Syntax
+        // objectName["propertyName"]
+        // console.log(userDetails["firstName"]); // John
+        // console.log(userDetails["lastName"]); // Jack
+
+        // Delete object property
+        // Syntax
+        // delete objectName.propertyName
+        // delete userDetails.age;
+        // console.log(userDetails);
+
+        // Adding "multi word" propertyName
+        // Ex:
+        // date of birth => "date of birth"
+        // let userBirthDate = {
+        //     age: 23,
+        //     "year of birth": 2000
+        // };
+        // console.log(userBirthDate);
+
+        // Property Value Shorthand
+        // function userDetails(name, age, city, isAdmin) { // name => "John" // age => 25, city => "Bangalore"
+        //     return {
+        //         name, // propertyName : propertyValue => propertyName/propertyValue
+        //         age,
+        //         city,
+        //         propName: isAdmin
+        //     }
+        // };
+        // let user = userDetails("John", 20, "Bangalore", true);
+        // console.log(user);
+
+        // Checking Existance of the specific property in an object
+        // Syntax
+        // "propertyName" in object => exists => true => else => false
+        // let fruits = {
+        //     mango: 20,
+        //     apple: 25,
+        //     orange: 30
+        // };
+        // console.log("mango" in fruits); // true
+        // console.log("banana" in fruits); // false
+
+        // for...in 
+        // Iterate the object properties
+        // let name = 20;
+        let fruits = {
+            mango: 20,
+            apple: 25,
+            orange: 30
+        };
+        for (const propName in fruits) {
+            console.log(fruits[propName]); // fruits["mango"] => 20
+        }
+    </script>
+</body>
+
+</html>

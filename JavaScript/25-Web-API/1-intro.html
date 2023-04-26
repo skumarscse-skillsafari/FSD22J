@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Web API" />
+    <title>Web API</title>
+  </head>
+  <body>
+    <h1>Web API</h1>
+    <form action="#">
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username"
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Password"
+        />
+      </p>
+      <p>
+        <button id="btn">Submit</button>
+        <button id="clr">Remove</button>
+      </p>
+    </form>
+
+    <script>
+      // Web API
+      // Allows us to use the functionalities provided by the web browsers in the web application
+      // 1. localStorage()
+      // 2. sessionStorage()
+      // 3. geolocation() API
+      // 4. FormData API
+      // 5. Fetch API
+
+      // localStorage
+      // Storage medium in the browser, where we can store the details of the user in the key: value pair
+      // 5MB
+
+      // Access localStorage
+      // Each and every webpage can able to store some data in the localStorage
+      // Ex:
+      // 1. www.skillsafari.in => key => value => name => "John"
+      // 2. www.skillsafari.in/about => key => value => age => 30
+      // 1. window.localStorage => returns Storage object
+      // 2. localStorage => returns Storage object
+
+      // Methods and Properties
+      // 1. setItem("key", "value") => Add new key value pair in the Storage object
+      // 2. getItem("key") => Get the "value" of the "key" in the Storage object
+      // 3. removeItem("key") => Remove a key: value pair from the Storage object using "key"
+      // 4. clear() => Remove all the key : value from the Storage object
+      // 5. length => Return number of key: value pair in the Storage object
+
+      // Add key: value
+      // Syntax
+      // localStorage.setItem("key", "value");
+      //   localStorage.setItem("name", "John");
+
+      // Update key: value
+      // Syntax
+      // localStorage.setItem("existingKey", "newValue")
+      //   localStorage.setItem("name", "Jack");
+
+      // Get the value
+      // Syntax
+      // localStorage.getItem("key")
+      // return "value" of the "key" passed in the parameter
+      // if "key" not matches => "null"
+      //   console.log(localStorage.getItem("name"));
+
+      // Remove the key: value
+      // removeItem("key")
+      // Syntax
+      // localStorage.removeItem("key")
+      // if "key" matched, remove the key: value pair from the Storage object
+      // if "key" not matched => undefined
+      //   localStorage.removeItem("name");
+
+      // clear()
+      //   localStorage.clear();
+
+      // Object.keys()
+      //   console.log(Object.keys(localStorage));
+      //   console.log(Object.values(localStorage));
+      //   for (const [key, value] of Object.entries(localStorage)) {
+      //     console.log(`Key => ${key} and Value => ${value}`);
+      //   }
+
+      let username = document.querySelector("#username");
+      let password = document.querySelector("#password");
+      let btn = document.querySelector("#btn");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let userDetails = {
+          name: username.value,
+          password: password.value,
+        };
+        console.log(userDetails);
+        localStorage.setItem(username.value, JSON.stringify(userDetails));
+      });
+
+      let remove = document.querySelector("#clr");
+      remove.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem(username.value);
+      });
+
+      let str = localStorage.getItem("John");
+      console.log(str);
+      console.log(JSON.parse(str));
+    </script>
+  </body>
+</html>

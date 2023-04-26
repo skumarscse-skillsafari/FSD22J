@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Geolocation API" />
+    <title>Geolocation API</title>
+  </head>
+  <body>
+    <h1>Geolocation API</h1>
+    <button id="btn">Show my location</button>
+    <p id="location"></p>
+
+    <script>
+      // Geolocation API
+      // Access Geolocation API
+      // navigator.geolocation
+
+      let btn = document.querySelector("#btn");
+      let locate = document.querySelector("#location");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+      });
+
+      let onSuccess = (position) => {
+        console.log(position.coords);
+        const { latitude, longitude } = position.coords;
+        locate.textContent = `Your Current Latitude: ${latitude} and Longitude: ${longitude}`;
+      };
+
+      let onError = () => {
+        locate.textContent = "Failed to fetch your location";
+      };
+    </script>
+  </body>
+</html>

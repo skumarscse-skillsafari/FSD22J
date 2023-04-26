@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Grid - Order">
+    <title>CSS - Grid - Order</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #222;
+        }
+
+        .parent {
+            border: 5px solid red;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px 100px;
+        }
+
+        .child {
+            padding: 2rem;
+            background: #dedede;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid green;
+            color: black;
+        }
+
+        .child-3 {
+            /* order: 0 (default) */
+            order: -1;
+        }
+
+        .child-2 {
+            order: 1;
+        }
+
+        .child-4 {
+            order: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child child-1">One</div>
+        <div class="child child-2">Two</div>
+        <div class="child child-3">Three</div>
+        <div class="child child-4">Four</div>
+        <div class="child child-5">Five</div>
+    </div>
+</body>
+
+</html>

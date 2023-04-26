@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Radio Button - Dynamic">
+    <title>Radio Button - Dynamic</title>
+</head>
+
+<body>
+    <h1>Radio Button - Dynamic</h1>
+    <p>Select anyone subject</p>
+    <div id="result">
+
+    </div>
+    <button id="btn">Click</button>
+    <hr>
+    <p id="option">
+
+    </p>
+    <script>
+        // Radio Button - Dynamic
+        const subjects = ["English", "Maths", "Physics", "Chemistry"];
+        let result = document.querySelector("#result");
+        let newRadio = subjects.map((subject, index) => {
+            return (
+                `
+                <input type="radio" name="subject" id=subject-${index + 1} value=${subject} /> ${subject}
+                `
+            )
+        })
+        // console.log(newRadio.join(""));
+        result.innerHTML = newRadio.join("");
+
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let radioBtns = document.querySelectorAll("[name='subject']");
+            radioBtns.forEach((radioBtn) => {
+                if (radioBtn.checked) {
+                    document.querySelector("#option").textContent = radioBtn.value;
+                }
+            })
+        })
+
+        // Array.from(NodeList) => Array Like element
+        let radioBtns = Array.from(document.querySelectorAll("[name='subject']"));
+        console.log(radioBtns);
+        let optionsArr = radioBtns.map((radioBtn) => {
+            return radioBtn.value
+        });
+        console.log(optionsArr);
+    </script>
+</body>
+
+</html>

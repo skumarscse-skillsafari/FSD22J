@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="prepend()">
+    <title>prepend()</title>
+</head>
+
+<body>
+    <h1>prepend()</h1>
+    <ul id="list">
+        <li>Maths</li>
+        <li>Physics</li>
+        <li>Chemistry</li>
+    </ul>
+
+
+    <script>
+        // append()
+        // insert a node before the first element child of the parent node
+        // Syntax
+        // parentNode.append(...nodes)
+        // let li = document.createElement("li");
+        // li.id = "new-item";
+        // li.textContent = "English";
+
+        // let list = document.querySelector("#list");
+        // list.prepend(li);
+
+        let list = document.querySelector("#list");
+        let subjectsArr = ["English", "Computer", "History"];
+        let items = subjectsArr.map((subject, index) => {
+            let li = document.createElement("li");
+            li.id = `new-item-${index + 1}`;
+            li.textContent = subject;
+            return li;
+        })
+        list.prepend(...items);
+
+    </script>
+</body>
+
+</html>

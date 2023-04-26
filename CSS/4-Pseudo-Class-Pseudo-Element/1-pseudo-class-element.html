@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS - Pseudo Class">
+    <title>CSS - Pseudo Class</title>
+    <style>
+        /* 
+        CSS - Pseudo Class 
+        Pseudo => false
+        Syntax
+        selector:pseudoClassName {
+            // propertyName: propertyValue;
+        }
+        1. link
+        2. visited
+        3. hover
+        4. active
+        */
+        a:link {
+            color: green;
+        }
+
+        a:hover {
+            color: red;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        a:visited {
+            color: brown;
+        }
+
+        a:active {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS - Pseudo Classes</h1>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</body>
+
+</html>

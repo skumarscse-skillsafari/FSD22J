@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="This is html table demo page">
+    <title>HTML - Demo page</title>
+</head>
+
+<body>
+    <h1>Tables</h1>
+    <!-- 
+        // Method - 1
+        Tables => Rows (left-right) and Columns (top-bottom)
+        <table border="1"> => Create table with border width of "1"
+            <tr>
+                <td>...</td> => create table column or data
+                <td>...</td> => create table column or data
+            </tr> => create table rows
+            <tr>
+                <td>...</td> => create table column or data
+                <td>...</td> => create table column or data
+            </tr> => create table rows
+        </table
+
+
+        // Method - 2
+        <table>
+            <caption>....</caption> => Add heading to the table
+            <thead>...</thead> => Creating field properties (usually 1st row in the table)
+            <tbody>...</tbody> => Add table contents
+            <tfoot>...</tfoot> => Add some end credits in the table
+        </table>
+     -->
+    <!-- Method - 1 -->
+    <h2>Mathod - 1</h2>
+    <h2>Fruits Table</h2>
+    <table border="1">
+        <tr>
+            <th>S.No.</th> <!-- Table head-->
+            <th>Fruits Name</th>
+            <th>Price/Kg (Rs.)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Apple</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Mango</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Orange</td>
+            <td>50</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>Method - 2</h2>
+    <!-- Method - 2 -->
+    <h2>Products Table</h2>
+    <table border="1">
+        <caption>Products Table</caption>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mobile</td>
+                <td>10</td>
+                <td>10000</td>
+                <td>100000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Laptops</td>
+                <td>10</td>
+                <td>20000</td>
+                <td>200000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Headphones</td>
+                <td>10</td>
+                <td>100</td>
+                <td>1000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Prepared by</td>
+                <td>SkillSafari</td>
+                <td></td>
+                <td>Grand Total</td>
+                <td>301000</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

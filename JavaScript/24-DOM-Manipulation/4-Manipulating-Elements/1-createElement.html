@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="createElement">
+    <title>createElement</title>
+</head>
+
+<body>
+    <h1>createElement</h1>
+    <p id="para"><strong>This is a paragraph</strong></p>
+    <!-- <p>...</p> => Element -->
+    <!-- id => attribute and para => attibute value -->
+    <!-- This is a paragraph => textContent -->
+
+    <script>
+        // createElement
+        // 1. Create a new element
+        // 2. Add/Modify the content in the element
+        // 3. Add/Modify an attribute to an element
+        // 4. Clone the element
+        // 5. Delete the element
+
+
+
+        // createElement() => create a new HTML element
+        // Syntax
+        // document.createElement("tagName")
+        // <div>...</div> => document.createElement("div")
+        // <div id="div-demo">
+        //        <p class = "para">This is a paragraph</p>
+        // </div>
+        console.log(document.createElement("div"));
+        let divEle = document.createElement("div");
+        // Add attribute
+        divEle.id = "div-demo";
+        // Create <p>, Add class="para", Add textContent = "This is a paragraph"
+        let paraEle = document.createElement("p");
+        paraEle.className = "para"
+        paraEle.textContent = "This is a paragraph";
+        console.log(paraEle);
+
+        // Adding <p> as append() to <div>
+        divEle.append(paraEle);
+
+        // Add newly created element to the DOM
+        document.body.appendChild(divEle);
+
+
+        // <div>...</div> => let div = document.createElement("div")
+        // div.id = "div-demo"
+        // <div id="div-demo"></div>
+
+        // <p>...</p> => let p = document.createElement("p");
+        // p.className = "para"
+        // p.textContent = "This is a Paragraph"
+        // <p class="para">This is a Paragraph</p>
+
+        // append() => add a new element inside an existing element
+        // div.append(p)
+        // <div id="div-demo">
+        //      <p class="para">This is a Paragraph</p>
+        // </div>
+
+        // appendChild()
+        // document.body.appendChild(div)
+
+        // createElement()
+        // append()
+        // appendChild()
+        // id
+        // className
+        // textContent
+        // innerHTML
+
+    </script>
+</body>
+
+</html>

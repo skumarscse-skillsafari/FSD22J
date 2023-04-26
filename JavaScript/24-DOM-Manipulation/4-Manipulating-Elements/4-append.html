@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="append()">
+    <title>append()</title>
+</head>
+
+<body>
+    <h1>append()</h1>
+    <ul id="list">
+        <li>English</li>
+        <li>Maths</li>
+        <li>Physics</li>
+    </ul>
+
+
+    <script>
+        // append()
+        // insert a node after the last child of the parent node
+        // Syntax
+        // parentNode.append(...nodes)
+        let li = document.createElement("li");
+        li.id = "new-item";
+        li.textContent = "Chemistry";
+
+        let list = document.querySelector("#list");
+        list.append(li);
+    </script>
+</body>
+
+</html>

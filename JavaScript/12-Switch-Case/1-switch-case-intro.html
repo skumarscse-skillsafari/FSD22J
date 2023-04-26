@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Switch Case">
+    <title>Switch Case</title>
+</head>
+
+<body>
+    <h1>Switch Case</h1>
+
+
+    <script>
+        // Switch Case
+        // Alternative to multiple if else(condition) statement
+        // if.. else if... else
+        // let input = prompt("Monday")
+        // console.log("Monday");
+        // let input = prompt("Hello")
+        // console.log("Enter valid day");
+        // let input = prompt("Enter a Day (firstword must be uppercase)", "Monday");
+        // console.log(input);
+        // if (input == "Monday") {
+        //     console.log(input);
+        // } else if (input == "Tuesday") {
+        //     console.log(input);
+        // } else if (input == "Wednesday") {
+        //     console.log(input);
+        // } else if (input == "Thursday") {
+        //     console.log(input);
+        // } else if (input == "Friday") {
+        //     console.log(input);
+        // } else if (input == "Satuday") {
+        //     console.log(input);
+        // } else if (input == "Sunday") {
+        //     console.log(input);
+        // } else {
+        //     console.log("Enter Valid Day");
+        // }
+
+        /*
+        Syntax
+        switch(input) {
+            case "Monday":
+                // statement;
+                // break;
+
+            case "condition-2":
+                // statement;
+                // break;
+
+            case "condition-3":
+                // statement;
+                // break
+            
+            default:
+                // statement;
+        }
+        */
+        // switch (input) { // "1" === 1
+        //     case "Monday":
+        //         console.log(input);
+        //         break;
+        //     case "Tuesday":
+        //         console.log(input);
+        //         break;
+        //     case "Wednesday":
+        //         console.log(input);
+        //         break;
+        //     case "Thursday":
+        //         console.log(input);
+        //         break;
+        //     case "Friday":
+        //         console.log(input);
+        //         break;
+        //     case "Saturday":
+        //         console.log(input);
+        //         break;
+        //     case "Sunday":
+        //         console.log(input);
+        //         break;
+
+        //     default:
+        //         console.log(input);
+        //         console.log("Enter valid day...");
+        //         break;
+        // }
+        // let number = +prompt("Enter any number between 1 and 5", 1); // 1
+        // switch (number) { // 1 
+        //     case 1:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 2:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 3:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 4:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 5:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     default:
+        //         console.log(`Enter value between 1 and 5 only`);
+        // }
+
+        // Skipping of "break" keyword
+        // let number = +prompt("Enter any number between 1 and 5", 1); // 1
+        // switch (number) { // 1 
+        //     case 1:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 2:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 3:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 4:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     case 5:
+        //         console.log(`User enterd value is: ${number}`);
+        //         break;
+        //     default:
+        //         console.log(`Enter value between 1 and 5 only`);
+        // }
+
+        // Grouping switch case
+        let number = +prompt("Enter any number between 1 and 5", 1); // 1
+        switch (number) { // 1 
+            case 1:
+                console.log(`User enterd value is: ${number}`);
+
+            case 2:
+                console.log(`User enterd value is: ${number}`);
+
+            case 3:
+                console.log(`User enterd value is: ${number}`);
+                break;
+            case 4:
+                console.log(`User enterd value is: ${number}`);
+                break;
+            case 5:
+                console.log(`User enterd value is: ${number}`);
+                break;
+            default:
+                console.log(`Enter value between 1 and 5 only`);
+        }
+    </script>
+</body>
+
+</html>

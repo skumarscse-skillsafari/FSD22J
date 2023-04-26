@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Array - Intro">
+    <title>Array - Intro</title>
+</head>
+
+<body>
+    <h1>Array - Intro</h1>
+
+    <script>
+        // Array - Intro
+        // Array => collection for storing the data (elements or items) in a sequential order
+        // Syntax
+        // [ "Apple", "Orange", "Mango" ]
+        // [ 1, 2, 3, 4, 5 ]
+        // [ 1, 2, "Hello", true, null, undefined, function ]
+        // Declare a Array
+        // 1. new Array()
+        // 2. Square bracket method => []
+
+        // Square bracket method
+        // let fruits = ["Apple", "Orange", "Mango"];
+        // Elements or Items
+        // console.log(fruits);
+
+        // Access the element from the Array
+        // Syntax
+        // array[index];
+        // console.log(fruits[1]); // Orange
+        // console.log(fruits[2]); // Mango
+        // console.log(fruits[3]); // undefined
+
+        // Adding and Updating an element
+        // Syntax
+        // array[newIndex] = value;
+        // Add
+        // fruits[3] = "Banana";
+        // console.log(fruits);
+
+        // Update
+        // array[existingIndex] = newValue
+        // fruits[2] = "Pineapple";
+        // console.log(fruits);
+
+        // Getting the count of array elements
+        // console.log(fruits.length); // 4
+
+        // Access last element from an Array
+        // console.log(fruits[fruits.length - 1]);
+
+        // at(-1)
+        // console.log(fruits.at(-1));
+
+
+        // Methods
+        // Removing and Adding the element into an array
+        // 1. pop() and push()
+        // pop() => removes last element from an array and
+        // push() => add new element in the end of an array
+
+        // 2. shift() and unshift()
+        // shift() => removes the first element from an array and
+        // unshift() => adds new element in the beginning of the array
+
+        // pop() and push()
+        // pop()
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // console.log(subjects);
+        // console.log(subjects.pop());
+        // console.log(subjects);
+
+        // // push("element")
+        // subjects.push("Computer", "Chemistry");
+        // console.log(subjects);
+
+        // shift() and unshift()
+        // shift()
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // console.log(subjects);
+
+        // shift()
+        // console.log(subjects.shift());
+        // console.log(subjects);
+
+        // unshift()
+        // subjects.unshift("English", "Computer");
+        // console.log(subjects);
+
+        // English, Maths, Physics, Chemistry
+        // let subjects = [ "English", "Maths", "Physics", "Chemistry" ];
+        // let subjects = [];
+        // for (let i = 0; i < 4; i++) {
+        //     // subjects[i] = prompt("Enter four subjects");
+        //     // push
+        //     subjects.push(prompt("Enter 4 subjects"));
+        // }
+        // console.log(subjects);
+
+        // let subjects = ["English", "Maths", "Physics", "Chemistry"];
+        // // for...of
+        // for (const key of subjects) {
+        //     console.log(key);
+        // }
+
+        // new Array()
+        // let subjects = new Array("English", "Maths", "Physics", "Chemistry");
+        // console.log(subjects);
+
+
+        // Multi-dimensional array
+        // Array inside an array
+        // [ 1, 2, 3 ] // 1-d array
+        /*
+        [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        */
+        // let multiArray = [
+        //     [1, 2, 3], // 0 => [ 1, 2, 3 ] => [0][0] [0][1] [0][2]
+        //     [4, 5, 6], // 1 => [ 4, 5, 6 ] => [1][0] [1][1] [1][2]
+        //     [7, 8, 9]  // 2 => [ 7, 8, 9 ] => [2][0] [2][1] [2][2]
+        // ];
+        // console.log(multiArray);
+        // console.log(multiArray[2][2]); // 9
+
+        // toString
+        // Array elements are generally considered as comma seperated string, if it is converted into a string
+        // let arr = [1, 2, 3];
+        // // console.log(arr);
+        // alert(arr);
+        // console.log(String(arr) === "1,2,3");
+
+        // alert("" + 1); // 1
+        // alert("1" + 1); // 11
+        // alert("1,2" + 1); // 1,21
+
+        // alert([] + 1);
+        // alert([1] + 1);
+        // alert([1, 2] + 1);
+
+        // Array => call by reference
+        // let arr1 = [1, 2, 3];
+        // let arr2 = arr1;
+        // console.log(arr1);
+        // console.log(arr2);
+        // arr2.push(4);
+        // console.log(arr1);
+        // console.log(arr2);
+
+        // Don't compare two arrays with "=="
+        let arr1 = [1, 2, 3];
+        let arr2 = arr1;
+        console.log(arr1 === arr2); // true
+        console.log([] == []); // false
+        console.log([0] == [0]); // false
+        let arr3 = [1, 2, 3];
+        let arr4 = [1, 2, 3];
+        console.log(arr3 == arr4); // false
+    </script>
+</body>
+
+</html>

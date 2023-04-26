@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DOM - Getting Parent">
+    <title>DOM - Getting Parent</title>
+</head>
+
+<body>
+    <h1>DOM - Getting Parent</h1>
+    <div id="parent">
+        <p id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+        <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+        <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+        <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ipsam.</p>
+    </div>
+
+    <form action="#">
+        <input type="radio" name="subject" id="subject-one">English
+        <input type="radio" name="subject" id="subject-two">Maths
+        <input type="radio" name="subject" id="subject-three">Physics
+        <input type="radio" name="subject" id="subject-four">Chemistry
+    </form>
+
+    <script>
+        // DOM - Getting Parent
+        // childNode.parentNode => parent element details
+        // let para = document.querySelector("#para");
+        // console.log(para);
+        // console.log(para.parentNode);
+
+        let subjectThree = document.querySelector("#subject-three");
+        console.log(subjectThree);
+        console.log(subjectThree.parentNode);
+    </script>
+</body>
+
+</html>

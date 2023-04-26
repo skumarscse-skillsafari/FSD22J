@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="ID - Selector">
+    <title>ID - Selector</title>
+    <style>
+        /* 
+            Attribute => id="value"
+            #value {
+                propertyName: propertyValue;
+            }
+
+            1. Usage of "id" attribute on the element, inorder to differentiate one of the elements with others
+            2. "value" of the id attribute must not be duplicated (Unique)
+        */
+        #paraOne {
+            color: red;
+        }
+
+        #paraTwo,
+        #paraThree {
+            color: green;
+        }
+
+        h1,
+        #paraThree {
+            color: indigo;
+        }
+
+        /* Specificity */
+        h2#paraThree {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ID - Selector</h1>
+    <p id="paraOne">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, veniam!</p>
+    <h2>Heading Two</h2>
+    <p id="paraTwo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, expedita.</p>
+    <h3>Heading Three</h3>
+    <p id="paraThree">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, magni?</p>
+    <h2 id="paraThree">This is a heading</h2>
+</body>
+
+</html>

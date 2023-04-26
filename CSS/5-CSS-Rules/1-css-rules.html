@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="CSS Rules">
+    <title>CSS Rules</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* 
+        // CSS Rules
+        1. If applying same property with different values: inline, internal and external => inline has more preference
+        2. if applying same property with different values on a same element: id and class => value of id has more preference 
+        3. !important => make either internal or external has more preference than inline
+        */
+        p {
+            color: green;
+        }
+
+        #idProp {
+            color: green;
+        }
+
+        .classProp {
+            color: brown;
+        }
+
+        h2 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Rules</h1>
+    <p style="color: blue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ducimus sint animi
+        incidunt perspiciatis,
+        dignissimos at ipsum culpa illo aut!</p>
+    <hr>
+    <p id="idProp" class="classProp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laborum, soluta
+        quidem magni reiciendis, hic
+        dolorum repellat, neque magnam beatae doloribus illum. In voluptatum doloribus deserunt repudiandae at nemo
+        sint?</p>
+    <hr>
+    <h2 style="color: green;">Hello, I have the properties of Internal/External</h2>
+</body>
+
+</html>

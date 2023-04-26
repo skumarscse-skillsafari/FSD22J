@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Loops">
+    <title>Loops</title>
+</head>
+
+<body>
+    <h1>Loops</h1>
+
+    <script>
+        // Loops
+        // Loop => Repeating someting continously until some certain condition met
+        // "Loops"
+        // "Loops" => Iteration
+        // "Loops"
+        // "Loops" => 10th time => condition
+
+        // Print the numbers 1 to 10 in the console
+        // console.log(1);
+        // console.log(2);
+        // console.log(3);
+        // console.log(4);
+        // console.log(5);
+        // console.log(6);
+        // console.log(7);
+        // console.log(8);
+        // console.log(9);
+        // console.log(10);
+
+        // Repeat something
+        // Untill the Condition
+        // Starting number => 1
+        // Iteration => increment the current number by 1
+        // Stop number => 10
+
+        // 1. while()
+        // 2. do...while()
+        // 3. for()
+
+        // while()
+        // Syntax
+        /*
+            1. Initialization
+            2. Condition
+            3. Increment/Decrement
+
+            Initialization;
+            while(condition) {
+                // loop body
+
+                Increment/Decrement
+            }
+        */
+        // Entry-Check Loop
+        // 1 to 10
+        // let number = 1; // Initialization
+        // while (number <= 10) { // Condition // 1 <= 10
+        //     console.log(`Iteration: ${number}`);
+        //     console.log(`The Value is: ${number}`); // 1
+        //     console.log("------------------------");
+        //     number++; // number = number + 1; // Increment => 2
+        // }
+
+        // do...while()
+        // Exit Check Loop
+        // Runs atleast once even if the condition is false
+        /*
+        Initialization;
+        do {
+            // loop body;
+            // Increment/Decrement
+        } while (condition)
+        */
+        // let number = 1;
+        // do {
+        //     console.log(`Iteration count: ${number}`);
+        //     console.log(`Iteration value: ${number}`);
+        //     console.log("----------------------------");
+        //     number++;
+        // } while (number <= 10);
+
+        // let start = 1;
+        // // do {
+        // //     console.log("I am inside do...while");
+        // //     start++;
+        // // } while (start > 10);
+
+        // while (start >= 10) {
+        //     console.log("I am from while loop");
+        //     start++;
+        // }
+
+        // for
+        /*
+        Syntax
+        for(initialization; condition; increment/decrement) {
+            // loop body
+        }
+        */
+        // for (let number = 1; number <= 10; number++) {
+        //     console.log(number);
+        // }
+
+        // Skipping initialization
+        // let number = 1;
+        // for (; number <= 10; number++) {
+        //     console.log(number);
+        // }
+
+        // Skipping Increment/decrement
+        // let number = 1;
+        // for (; number <= 10;) {
+        //     console.log(number);
+        //     number++;
+        // }
+
+        // break and continue
+        // Break => Break the loop before reaching the condition
+        // continue => Skips the ireration based on the condition
+
+        // for (let number = 1; number <= 10; number++) {
+        //     if (number == 5) break;
+        //     console.log(number); // 1 2 3 4
+        // }
+
+        // Skip the iteration => continue
+        // for (let number = 1; number <= 10; number++) {
+        //     if (number == 5) continue;
+        //     console.log(number); // 1 2 3 4
+        // }
+
+        // Write a JS Program to print first 20 Even numbers
+        // for (let number = 1; number <= 40; number++) {
+        //     if (!(number % 2)) { // 3 % 2 => 1
+        //         console.log(number);
+        //     }
+        // }
+
+        // Odd => num % 2 => 1 Ex. 21 % 2 => 1 => 7 % 2 => 1 <= true
+        // Even => num % 2 => 0 Ex. 18 % 2 => 0 => 8 % 2 => 0 <= false
+
+        // Nested Loops
+        // Loop inside a Loop
+
+        document.write("<h1>Hello</h1>");
+        // Outer Loop
+        for (let i = 1; i <= 5; i++) {
+            // Outer Loop => if, outer loop runs once, the inner loop needs to run completly till the condition fails
+            // console.log("-------Outer Loop----------");
+            // console.log(i); // 1 2 3 4 5
+            // Inner Loop
+            for (let j = 1; j <= i; j++) { // 6 <= 5
+                // console.log("--------Inner Loop--------");
+                document.write(String(j) + " ");
+                // 1
+                // 1 2 
+                // 1 2 3
+                // 1 2 3 4
+                // 1 2 3 4 5
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

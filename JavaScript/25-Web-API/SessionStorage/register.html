@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Registration Form" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form action="#" id="register">
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username"
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter password"
+        />
+      </p>
+      <p>
+        <input type="text" name="city" id="city" placeholder="Enter city" />
+      </p>
+      <p>
+        <input type="submit" value="Register" id="submit" />
+        <input type="reset" value="Clear" />
+      </p>
+      <p>Already Registered? <a href="./login.html">Click here to login</a></p>
+    </form>
+
+    <script>
+      let username = document.querySelector("#register")[0];
+      let password = document.querySelector("#register")[1];
+      let city = document.querySelector("#register")[2];
+      let submit = document.querySelector("#submit");
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        let id = Math.floor(Math.random() * 1000);
+        let userDetails = {
+          id: id,
+          name: username.value,
+          password: password.value,
+          city: city.value,
+        };
+        let localUsers = Object.keys(localStorage);
+        let checkUser = localUsers.includes(username.value);
+        console.log(checkUser);
+        console.log(localUsers);
+        if (!checkUser) {
+          localStorage.setItem(username.value, JSON.stringify(userDetails));
+          alert("User Created Successfully");
+          window.location.href = "./login.html";
+        } else {
+          alert("User already exists");
+        }
+      });
+    </script>
+  </body>
+</html>

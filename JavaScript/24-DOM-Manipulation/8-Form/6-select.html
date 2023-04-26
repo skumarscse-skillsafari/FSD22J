@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Select Element" />
+    <title>Select Element</title>
+  </head>
+  <body>
+    <h1>Select Element</h1>
+    <!-- <select name="subjects" id="subjects">
+      <option value="English">english</option>
+      <option value="Maths">maths</option>
+      <option value="Physics">physics</option>
+      <option value="Chemistry">chemistry</option>
+    </select> -->
+
+    <select name="subjects" id="subjects" multiple>
+      <option value="English">english</option>
+      <option value="Maths">maths</option>
+      <option value="Physics">physics</option>
+      <option value="Chemistry">chemistry</option>
+    </select>
+
+    <button onclick="displaySelect()">Click</button>
+
+    <script>
+      // Select Element
+      console.log(document.querySelectorAll("#subjects"));
+
+      let displaySelect = () => {
+        let ele = document.querySelector("#subjects");
+        // selectedIndex => selected option element
+        // console.log(ele.selectedIndex); // 0
+        // value => selected option value
+        // console.log(ele.value);
+        // console.log(
+        //   `User selected option: ${ele.value} is in index => ${ele.selectedIndex}`
+        // );
+
+        // options => all the options of the select element
+        // console.log(ele.options[1]);
+        // console.log(ele.options[1].text);
+        // console.log(ele.options[1].value);
+
+        // selected => to check if the user selected option
+        // console.log(ele.options[0].selected);
+
+        // All the user selected options value
+        console.log(Array.from(ele.options));
+        let selectedOptions = [];
+        Array.from(ele.options).forEach((option) => {
+          if (option.selected) {
+            selectedOptions.push(option.text);
+          }
+        });
+        console.log(selectedOptions.join(", "));
+      };
+    </script>
+  </body>
+</html>

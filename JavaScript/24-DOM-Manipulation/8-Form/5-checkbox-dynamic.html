@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Dynamic - CheckBox">
+    <title>Dynamic - CheckBox</title>
+</head>
+
+<body>
+    <h1>Dynamic - CheckBox</h1>
+    <form action="#">
+        <p>Dynamic CheckBox:</p>
+        <p id="result"></p>
+        <p>
+            <button id="btn">Click</button>
+        </p>
+    </form>
+    <hr>
+    <p id="select-option"></p>
+
+    <script>
+        // Dynamic - CheckBox
+        let checkBoxCount = +prompt("Enter number of checkboxes to be created");
+        let checkBoxArr = [];
+        let btn = document.querySelector("#btn");
+        let selectedOption = document.querySelector("#select-option");
+        for (let i = 0; i < checkBoxCount; i++) {
+            checkBoxValue = prompt(`Enter ${i + 1} option`);
+            checkBoxArr.push(checkBoxValue);
+        }
+        console.log(checkBoxArr);
+
+        let result = document.querySelector("#result");
+        // let val = checkBoxArr.map((check) => {
+        //     return (
+        //         `
+        //         <input type="checkbox" name=${check} id=${check} value=${check} />${check}
+        //         `
+        //     )
+        // })
+        // result.innerHTML = val.join(" ");
+
+        checkBoxArr.forEach((checkBox) => {
+            let newEle = document.createElement("input");
+            newEle.type = "checkbox";
+            newEle.name = checkBox;
+            newEle.value = checkBox;
+            console.log(newEle);
+            let label = document.createElement('label');
+            label.appendChild(document.createTextNode(checkBox));
+            result.appendChild(newEle);
+            result.appendChild(label);
+        });
+
+        let selectedSubjects = [];
+        // console.log(checkBoxArr);
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let options = document.querySelectorAll("[type='checkbox']");
+            console.log(options);
+            options.forEach((option) => {
+                if (option.checked) {
+                    selectedSubjects.push(option.value);
+                }
+            })
+            console.log(selectedSubjects);
+            selectedOption.textContent = selectedSubjects.length != 0 ? `User Selected Subjects: ${selectedSubjects.join(" ")}` : `User not selected Any Subject`;
+        })
+
+
+
+    </script>
+</body>
+
+</html>

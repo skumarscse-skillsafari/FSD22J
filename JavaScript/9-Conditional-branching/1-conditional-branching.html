@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Conditional Branching">
+    <title>Conditional Branching</title>
+</head>
+
+<body>
+    <h1>Conditional Branching</h1>
+
+    <script>
+        // Conditional Branching
+        // 1. if statement
+        // 2. if statement and else clause
+        // 3. if...elseif...else
+
+        // if statement
+        // top to bottom
+        // Line by Line => Blocks
+        // Syntax
+        /*
+        if(condition) { // true
+            // if block executed only the condition of "if" turns "true"
+        }
+        */
+        /*
+        block-1:
+            statement -1;
+            statement -2;
+            statement -3;
+            statement -4;
+        block-2:    
+            statement -5;
+            statement -6;
+            statement -7;
+            statement -8;
+        */
+        // Convert numericString => number => 1. Number() / 2. Unary plus (prefix)
+        let numberOne = prompt("Enter number one", 1); // 50
+        let numberTwo = prompt("Enter number two", 1); // 10
+        // console.log(numberOne);
+        // console.log(numberTwo);
+        // console.log(numberOne + numberTwo);
+        // Perform addition  => if both numberOne and numberTwo variable values number
+        // Condition => Execute only if numberOne > numberTwo
+        // if numberOne is string and numberTwo is number => no output
+        // if numberOne is number and numberTwo is string => else is executing
+        // if (isNaN(numberOne)) { // numberOne = "hello" => true
+        //     console.log("Not a Number");
+        //     if (isNaN(numberTwo)) { // numberTwo = "welcome" => true
+        //         console.log("Not a Number");
+        //     }
+        // } else {
+        //     console.log("Number");
+        //     if (numberOne > numberTwo) { // 50 > 10 => true
+        //     let result = +numberOne + +numberTwo;
+        //     console.log(`The firstValue: ${numberOne}`);
+        //     console.log(`The secondValue: ${numberTwo}`);
+        //     console.log(`The result: ${result}`);
+        // } else {
+        //     console.log(`The firstValue: ${numberOne}`);
+        //     console.log(`The secondValue: ${numberTwo}`);
+        //     console.log("Enter first value greater then second");
+        // }
+        // }
+        // console.log(typeof numberOne);
+        // console.log(typeof numberTwo);
+        
+        // console.log("I am outside the if statement");
+        // console.log("I am also outside the if statement");
+
+        /*
+        Syntax
+        if..else
+        if(condition) {
+            // if block => if condition turns "true"
+            
+        } else {
+            // else block
+            // if condition turns "false", execute else block
+        }
+        */
+    </script>
+</body>
+
+</html>

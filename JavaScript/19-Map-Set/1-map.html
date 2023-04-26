@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Map and Set">
+    <title>Map and Set</title>
+</head>
+
+<body>
+    <h1>Map and Set</h1>
+
+    <script>
+        // Map and Set
+        // Object => Stored the data in Key: Value pair
+        // Array => Stored the data in sequential order
+        // Map => one of the collection of storing the data in key: value pair in sequential order
+        // Map works similar like an Object but the difference is, Map can store the key of any data type
+        // Object => Property Name / Key => String. Ex: name: "John"
+        // Map => Property Name / Key => Any type. Ex: name: "John", 123: "John"
+
+        // Create Map and Methods and Properties
+        // Create
+        // new Map()
+        // let map = new Map();
+        // console.log(map);
+
+        // map.set(key, value) => Add entries to the map as key: value pair
+        // map.get(key) => get the value of an entry using the key. If key not found return "undefined"
+        // map.has(key) => check the presence of the key and return "true", if key exists else false
+        // map.delete(key) => delete the entry based on key
+        // map.clear() => removes all the entries from the Map
+        // map.size => get the count of entries in the Map
+
+        // Add entries
+        // map.set("firstName", "John");
+        // map.set("lastName", "Jack");
+        // map.set("age", 25);
+        // map.set("isAdmin", false);
+        // map.set("firstName", "John")
+        //     .set("lastName", "Jack")
+        //     .set("age", 25)
+        //     .set("isAdmin", true);
+        // let map = new Map([
+        //     ["firstName", "John"],
+        //     ["lastname", "Jack"],
+        //     ["age", 25],
+        //     ["isAdmin", true]
+        // ]);
+        // console.log(map);
+
+        // Get the entry value based on key
+        // console.log(map.get("firstName"));
+        // console.log(map.get("city"));
+
+        // check the presence of the key in Map
+        // console.log(map.has("age"));
+        // console.log(map.has("city"));
+
+        // delete
+        // map.delete("isAdmin");
+        // console.log(map);
+
+        // clear()
+        // map.clear();
+        // console.log(map);
+
+        // map.size
+        // console.log(map.size);
+
+        // Iterating methods
+        // map.keys() => return keys as iterable elements
+        // map.values() => return values as iterable elements
+        // map.entries() => return [key, value] pair as iterable elements
+
+        // for...of()
+
+        // let keys = map.keys();
+        // for (const key of keys) {
+        //     console.log(key);
+        // }
+        // console.log(keys);
+        // let values = map.values();
+        // for (const value of values) {
+        //     console.log(value);
+        // }
+        // console.log(values);
+        // let keyValue = map.entries();
+        // for (const [key, value] of keyValue) {
+        //     console.log(`${key} => ${value}`);
+        // }
+        // console.log(keyValue);
+        // for (const key of map.keys()) {
+        //     console.log(key);
+        // }
+
+        // Object.entries() => Object to Map
+        // let userDetails = {
+        //     firstName: "John",
+        //     lastName: "Jack",
+        //     isAdmin: true,
+        //     age: 25
+        // };
+        // let map = new Map(Object.entries(userDetails));
+        // console.log(map);
+
+        // Object.fromEntries() => Map to Object
+        // let map = new Map([
+        //     ["firstName", "John"],
+        //     ["lastname", "Jack"],
+        //     ["age", 25],
+        //     ["isAdmin", true]
+        // ]);
+        // console.log(Object.fromEntries(map));
+
+        // Set
+        // store "set of values" without key. Both the key and value => value
+        // allows duplicate entries
+        // add values a object
+        // Create a Set
+        let set = new Set();
+        console.log(set);
+
+        // Methods and Properties
+        // Add the entry
+        // set.add(value) => add value to the Set
+        // set.delete(value) => delete the value from the Set and return true if value exists, else false
+        // set.has(value) => check the presence of the value in the Set and return true if value exists, else false
+        // set.clear() => removes all the values in the Set
+        // set.size => count the number of values
+        let john = { name: "John" };
+        let jack = { name: "Jack" };
+        let mary = { name: "mary" };
+        set.add(john);
+        set.add(jack);
+        set.add(mary);
+        set.add(jack);
+        set.add(john);
+        console.log(set);
+
+        // set.delete(john);
+        // set.clear();
+        // console.log(set);
+
+        // console.log(set.size);
+
+        // for (const user of set) {
+        //     console.log(user.name);
+        // }
+
+        set.forEach((user) => console.log(user.name));
+
+        // set.keys()
+        // set.values()
+        // set.entries()
+        for (const [key, value] of set.entries()) {
+            console.log(key, value);
+        }
+
+        // let fruits = new Set();
+        // fruits.add("Apple");
+        // fruits.add("Mango");
+        // fruits.add("Orange");
+        // fruits.add("Apple");
+        // fruits.add("Mango");
+        // console.log(fruits);
+
+        let fruits = ["Apple", "Orange", "Mango", "Mango", "Orange", "Apple"];
+        console.log(fruits);
+        let newArr = new Set(fruits);
+        console.log([...newArr]);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="HTML - Form">
+    <title>HTML - Form</title>
+</head>
+
+<body>
+    <h2>HTML - Form</h2>
+    <h2>Registration Form</h2>
+    <!-- 
+        Form => Get some input/response from the user
+        1. Name, age, phone number, email, password, dob, address
+                => Single line inputs and Multi-line inputs => address
+                => <input type="text/number/email/password/tel"></input>, <textarea></textarea>
+        2. Group of options => select any one or more than one
+                => <input type="radio/checkbox">, <select></select>
+        3. Buttons => Submit, Cancel, Reset
+     -->
+    <form action="./2-response.html" method="GET">
+        <fieldset>
+            <legend>Direct Response Fields:</legend>
+            <table>
+                <tr>
+                    <td>Enter Your Name:</td>
+                    <td><input type="text" name="username" id="username" placeholder="Enter your name"
+                            autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Enter Your Age:</td>
+                    <td><input type="number" name="age" id="age" placeholder="Enter your age" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Enter Your Email:</td>
+                    <td><input type="email" name="email" id="email" placeholder="Enter your Email" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Password:</td>
+                    <td><input type="password" name="password" id="password" placeholder="Enter Password"
+                            autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" name="confirm-password" id="confirm-password"
+                            placeholder="Confirm Password" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter Phone number:</td>
+                    <td><input type="number" name="phone-number" id="phone-number" placeholder="Enter mobile number"
+                            autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter DOB:</td>
+                    <td><input type="date" name="dob" id="dob"></td>
+                </tr>
+                <tr>
+                    <td>Enter Address:</td>
+                    <td><textarea name="address" id="address" cols="30" rows="5" placeholder="Enter Address..."
+                            autocomplete="off"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Response with options:</legend>
+            <table>
+                <tr>
+                    <td>Select Gender:</td>
+                    <!-- type="radio" => Select one option from the given options -->
+                    <td><input type="radio" name="gender" id="gender">Male
+                        <input type="radio" name="gender" id="gender">Female
+                        <input type="radio" name="gender" id="gender">Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Hobbies:</td>
+                    <td>
+                        <input type="checkbox" name="hobby-1" id="hobby-1">Cricket
+                        <input type="checkbox" name="hobby-2" id="hobby-2">Football
+                        <input type="checkbox" name="hobby-3" id="hobby-3">Newspaper
+                        <input type="checkbox" name="hobby-4" id="hobby-4">TV
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Course (Single):</td>
+                    <td>
+                        <select name="course" id="course">
+                            <option value="English">English</option>
+                            <option value="Maths">Maths</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Computer">Computer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Mark Range (Option Group):</td>
+                    <td>
+                        <select name="mark-range" id="mark-range">
+                            <optgroup label="HSC Mark-range">
+                                <option value="401-500">401-500</option>
+                                <option value="301-400">301-400</option>
+                                <option value="250-300">250-300</option>
+                            </optgroup>
+                            <optgroup label="SSLC Mark-range">
+                                <option value="401-500">401-500</option>
+                                <option value="301-400">301-400</option>
+                                <option value="250-300">250-300</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Multiple Selection (Multiple):</td>
+                    <td>
+                        <select name="addons" id="addons" multiple>
+                            <option value="Bus">Bus</option>
+                            <option value="Hostel">Hostel</option>
+                            <option value="Music">Music</option>
+                            <option value="Dance">Dance</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload Photo:</td>
+                    <td><input type="file" name="photo" id="photo"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <table>
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+                <td><input type="button" value="Cancel"></td>
+                <td><input type="reset" value="Reset"></td>
+
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

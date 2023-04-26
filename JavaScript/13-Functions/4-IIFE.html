@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="IIFE">
+    <title>IIFE</title>
+</head>
+
+<body>
+    <h1>IIFE</h1>
+
+    <script>
+        // IIFE
+        // Immediate Invokable Function Expression
+        // Syntax
+        // (functionDeclaration)()
+        // function selectSubject(subject) {
+        //     console.log(subject);
+        // }
+        // selectSubject("English");
+
+        // IIFE => Will be executed automatically whenever the page loads
+        (function selectSubject(subject) {
+            console.log(subject);
+        })("Maths");
+
+        (function result(fruitOne, fruitTwo, fruitThree) {
+            console.log("I am from IIFE");
+            console.log(fruitOne);
+            console.log(fruitTwo);
+            console.log(fruitThree);
+        })("Apple", "Orange", "Mango");
+    </script>
+</body>
+
+</html>

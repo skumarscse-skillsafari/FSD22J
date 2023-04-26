@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="setAttribute()">
+    <title>setAttribute()</title>
+</head>
+
+<body>
+    <h1>setAttribute()</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate distinctio numquam laudantium itaque suscipit
+        cumque aut est, magnam quos, nulla explicabo soluta cum corrupti cupiditate inventore voluptatibus alias beatae
+        ad.</p>
+    <button>Submit</button>
+
+    <script>
+        // setAttribute() => set the value of an attribute the the specified element
+        // Syntax
+        // element.setAttribute(key, value)
+
+        // Adding attribute value
+        let para = document.querySelector("p");
+        // para.setAttribute("id", "para");
+
+        // Modify the existing attribute value
+        // element.setAttribute("existingAttributeName", "newValue");
+        para.setAttribute("id", "new-para");
+
+        // keyed attribute (attribute without value)
+        // element.setAttribute("attrName", "")
+        let btn = document.querySelector("button");
+        btn.setAttribute("disabled", "");
+    </script>
+</body>
+
+</html>

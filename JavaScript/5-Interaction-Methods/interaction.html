@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="JavaScript - interaction Methods">
+    <title>JavaScript - interaction Methods</title>
+</head>
+
+<body>
+    <h1>JavaScript - interaction Methods</h1>
+
+    <script>
+        // JavaScript - interaction Methods
+        // 1. console.log() => display content in the console
+        // 2. document.write() => display the content in the HTML document
+        // 3. alert() => display the content as pop-up message
+        // 4. prompt() => Get the input from the user
+        // 5. confirm() => Getting confiramtion from the user
+
+        // console.log("I am from console");
+        // alert("I am a alert message");
+        // document.write("<h2>I am added by document.write() method</h2>");
+
+        // let message = prompt(a, b);
+        // a => display message
+        // b => default value
+        // Pop-up in the browser with two buttons "ok" and "cancel"
+        // onclicking "ok" user entered value assigned to the variable
+        // onclicking "cancel" button, "null" assigned to the variable
+        // let name = prompt("Enter your name", "John");
+        // console.log(`The user name is: ${name}`); // The user name is: John
+
+
+        // confirm()
+        // let confirmation = confirm(a);
+        // a => parameter used to display some question with "ok" and "cancel" button
+        // onclicking "ok", variable get the value as "true"
+        // onclicking "cancel", variable get the value as "false"
+        let isAdmin = confirm("Are you a Admin?");
+        console.log(isAdmin);
+    </script>
+</body>
+
+</html>
