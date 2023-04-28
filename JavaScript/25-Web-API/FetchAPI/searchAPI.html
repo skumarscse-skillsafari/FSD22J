@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Fetch API - Search App" />
+    <title>Fetch API - Search App</title>
+  </head>
+  <body>
+    <h1>Fetch API - Search App</h1>
+    <form action="#" id="form">
+      <p>
+        <input type="text" name="title" id="title" placeholder="Enter title" />
+      </p>
+      <p>
+        <input type="number" name="year" id="year" placeholder="Enter year" />
+      </p>
+      <p>
+        <button id="btn">Search</button>
+      </p>
+    </form>
+    <hr />
+    <div id="result"></div>
+
+    <script>
+      // Fetch API - Search App
+      let title = document.querySelector("#form")[0].value;
+      let year = document.querySelector("#form")[1].value;
+      let btn = document.querySelector("#btn");
+      let result = document.querySelector("#result");
+      let apiKey = "d096170";
+
+      let fetchData = async (e) => {
+        e.preventDefault();
+        console.log(title);
+        console.log(year);
+        let response = await fetch(
+          `http://www.omdbapi.com/?t=${title}&y=${year}&apikey=${apiKey}`
+        );
+        let data = await response.json();
+        console.log(data);
+        result.innerHTML = `
+                <div>
+                    <h2>Movie Name: ${data.Title}</h2>
+                    <h3>Released Year: ${data.Released}</h3>
+                    <p>Genre: ${data.Genre}</p>    
+                </div>
+            `;
+      };
+      btn.addEventListener("click", fetchData);
+    </script>
+  </body>
+</html>

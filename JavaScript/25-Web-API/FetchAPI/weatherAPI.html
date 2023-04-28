@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Weather API with API KEY" />
+    <title>Weather API with API KEY</title>
+  </head>
+  <body>
+    <h2>Weather API with API KEY</h2>
+    <form action="#">
+      <p>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          placeholder="Enter city name"
+        />
+      </p>
+      <p><button id="btn">Click</button></p>
+    </form>
+    <hr />
+    <div id="result"></div>
+
+    <script>
+      // Weather API with API KEY
+      let result = document.querySelector("#result");
+      let city = document.querySelector("#city");
+      let btn = document.querySelector("#btn");
+      let apiKey = "9701e05bdc450703a5af1448835dd149";
+
+      let fetchReport = async (e) => {
+        e.preventDefault();
+        let searchString = city.value.toLowerCase();
+        console.log(searchString);
+        let response = await fetch(
+          `http://api.openweathermap.org/data/2.5/weather?q=${searchString}&APPID=${apiKey}`
+        );
+        let data = await response.json();
+        console.log(data);
+        result.innerHTML = `
+            <div>
+                <h2>City: ${data.name}</h2>
+                <h2>Country: ${data.sys.country}</h2>
+                <p>Min. Temp: ${(data.main.temp_min - 273.15).toFixed(2)}C</p>
+                <p>Max. Temp: ${(data.main.temp_max - 273.15).toFixed(2)}C</p>
+            </div>`;
+      };
+      btn.addEventListener("click", fetchReport);
+    </script>
+  </body>
+</html>
