@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="postData - Fetch API" />
+    <title>postData - Fetch API</title>
+  </head>
+  <body>
+    <h2>postData - Fetch API</h2>
+    <form action="https://jsonplaceholder.typicode.com/users" id="user-form">
+      <p>
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          placeholder="Enter Firstname"
+        />
+      </p>
+      <p>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Enter Lastname"
+        />
+      </p>
+      <p>
+        <input type="submit" value="Create User" />
+      </p>
+    </form>
+
+    <script>
+      // postData - Fetch API
+      // fetch("url", {options})
+      // options: {method:..., body:..., }
+      // methods: GET, POST, PUT, DELETE
+      // GET => fetching the data
+      // POST => sending the data
+
+      // Mock the method of sending the data to the server using fetchAPI
+
+      let userForm = document.querySelector("#user-form");
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Hello");
+        // console.log(userForm[1]);
+        const firstName = userForm[0].value;
+        const lastName = userForm[1].value;
+        // console.log(firstName);
+        // console.log(lastName);
+        try {
+          let url = userForm.action;
+          // console.log(url);
+          const formData = new FormData(userForm);
+          console.log(formData);
+
+          let response = await fetch(url, {
+            method: "POST",
+            body: formData,
+          });
+          let data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      userForm.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

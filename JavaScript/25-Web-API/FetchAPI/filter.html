@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Fetch API - Filter" />
+    <title>Fetch API - Filter</title>
+  </head>
+  <body>
+    <h2>Fetch API - Filter</h2>
+    <form action="#">
+      <p>
+        <input type="text" name="product" id="product" />
+      </p>
+      <p>
+        <button id="btn">Search</button>
+      </p>
+    </form>
+    <hr />
+    <div id="result"></div>
+
+    <script>
+      // Fetch API - Filter
+      let btn = document.querySelector("#btn");
+      let filterData = null;
+      const getProducts = async (url) => {
+        let response = await fetch(url);
+        let products = await response.json();
+        // console.log(products);
+        filterData = [...products];
+        let result = document.querySelector("#result");
+        let productsArr = products.map((product) => {
+          return `<div>
+              <p>Title: ${product.title}</p>
+              <p>Description: ${product.description}</p>
+              <p>Category: ${product.category}</p>
+              <hr />
+            </div>`;
+        });
+        // console.log(productsArr.join(""));
+        result.innerHTML = productsArr.join("");
+      };
+      getProducts("https://fakestoreapi.com/products");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let searchString = document.querySelector("#product").value;
+        // console.log(searchString);
+        // console.log(filterData);
+        let newData = filterData.filter((data) =>
+          data.title.includes(searchString)
+        );
+        console.log(newData);
+        let productsArr = newData.map((product) => {
+          return `<div>
+              <p>Title: ${product.title}</p>
+              <p>Description: ${product.description}</p>
+              <p>Category: ${product.category}</p>
+              <hr />
+            </div>`;
+        });
+        console.log(productsArr.join(""));
+        productsArr.length != 0
+          ? (document.querySelector("#result").innerHTML = productsArr.join(""))
+          : (document.querySelector(
+              "#result"
+            ).innerHTML = `<p>No Products Found</p>`);
+      });
+    </script>
+  </body>
+</html>
