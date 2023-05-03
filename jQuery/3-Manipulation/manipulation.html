@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="jQuery - Manipulation Methods" />
+    <title>jQuery - Manipulation Methods</title>
+  </head>
+  <body>
+    <h2>jQuery - Manipulation Methods</h2>
+    <div id="div1">div 1</div>
+    <div id="div2">div 2</div>
+    <p id="hello">Hello,</p>
+    <div id="prepend">
+      <p>Hello</p>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // append()
+        // before()
+        // after()
+        // prepend()
+        // remove()
+        // replaceAll()
+        // wrap()
+        // after() => inserts content/element after the target element
+        // $("#div1").after(
+        //   "<h2 style='background-color: red'>Content added by after method</h2>"
+        // );
+        // before() => inserts content/element before the target element
+        // $("#div2").before(
+        //   "<h2 style='background-color: yellow'>Content added by after method</h2>"
+        // );
+        // append() => insert the content to the end of the target element
+        // $("p").append("World");
+        // prepend() => insert the content at the beginning of the target element
+        // $("#prepend").prepend("<p>This is inserted using prepend method</p>");
+        // remove() => removes elements specified by the selector
+        // $("#prepend").remove();
+        // replaceAll() => replaces all the target elements with the given element
+        // Syntax
+        // $("newElement").replaceAll("existingElement")
+        // $("<p>Newly Added</p>").replaceAll("div");
+        // wrap() => wrap each target element with specified content element
+        $("#hello").wrap("<div id='wrap'></div>");
+      });
+    </script>
+  </body>
+</html>

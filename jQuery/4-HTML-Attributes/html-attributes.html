@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="HTML - Attributes" />
+    <title>HTML - Attributes</title>
+  </head>
+  <body>
+    <h2>HTML - Attributes</h2>
+    <p style="background-color: red; font-size: 20px">This is a paragraph</p>
+    <div id="subjects">
+      <p>English</p>
+      <p>Maths</p>
+      <p>Physics</p>
+    </div>
+    <div id="demo"></div>
+    <p id="text"></p>
+    <input type="text" name="firstname" id="firstname" value="John" />
+    <input type="text" name="lastname" id="lastname" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // attr()
+        // prop()
+        // html()
+        // text()
+        // val()
+        // attr() => set or get the value of specified attribute of DOM Element
+        // get
+        // $("p").attr("style"); // return 'background-color: red; font-size: 20px'
+        // // set
+        // $("p").attr("class", "html-attr");
+        // prop() => gets or sets the value of specified property to the DOM elements
+        // let value = $("p").prop("style");
+        // console.log(value.backgroundColor);
+        // console.log(value.fontSize);
+        // html() => gets or sets html content to the specified DOM elements
+        // let innerHtml = $("#subjects").html();
+        // console.log(innerHtml);
+        // $("#demo").html("<p>This is a paragraph</p>");
+        // text() => gets or sets the textContent to the specified DOM element
+        // let text = $("h2").text();
+        // console.log(text);
+        // $("#text").text("This is added using text method");
+        // val() => gets or sets value property to the specified DOM element
+        // let value = $("#firstname").val();
+        // console.log(value);
+        // $("#lastname").val("Jack");
+      });
+    </script>
+  </body>
+</html>
