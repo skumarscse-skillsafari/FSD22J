@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="CSS - Manipulations" />
+    <title>CSS - Manipulations</title>
+    <style>
+      .divDemo {
+        height: 250px;
+        width: 300px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="divDemo">CSS - Manipulations</h2>
+    <div id="demo">
+      <p>This is a paragraph - 1</p>
+      <p>This is a paragraph - 2</p>
+      <p>This is a paragraph - 3</p>
+      <p>This is a paragraph - 4</p>
+    </div>
+    <p><button id="btn">Click</button></p>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // css()
+        // addClass()
+        // hasClass()
+        // removeClass()
+        // toggleClass()
+        // css() => get or set the style to the specified element(s)
+        // $("#demo").css({ backgroundColor: "red", height: "400px" });
+        // $("p").css({ fontSize: "40px" });
+        // console.log($("p").css("fontSize"));
+        // console.log($("#demo").css("height"));
+        // addClass() => add one or more class to the specified element
+        // $("#demo").addClass("divDemo");
+        // removeClass()
+        // $("h2").removeClass("divDemo");
+        // toggleClass() => toggle between add and remove the class to the specified element
+        // $("#btn").click(function () {
+        //   $("#demo").toggleClass("divDemo");
+        // });
+      });
+    </script>
+  </body>
+</html>

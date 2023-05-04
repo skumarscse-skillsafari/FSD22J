@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Traversal" />
+    <title>Traversal</title>
+  </head>
+  <body>
+    <h2>Traversal</h2>
+    <div id="myDiv">
+      <p>This is paragraph - 1</p>
+      <p>This is paragraph - 2</p>
+      <p id="special">This is paragraph - 3</p>
+      <p>This is paragraph - 4</p>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // children()
+        // each()
+        // find()
+        // first()
+        // next()
+        // parent()
+        // prev()
+        // siblings()
+        // each() => iterate each specified element with a callback function
+        // $("p").each(function (index) {
+        //   console.log(`Index: ${index} => Text: ${$(this).text()}`);
+        // });
+        // children() => get the child element of each element specified using selector expression
+        // console.log($("#myDiv").children());
+        // $("#myDiv")
+        //   .children()
+        //   .each(function (index) {
+        //     console.log(`Index: ${index} => Element: ${$(this).html()}`);
+        //   });
+        // find() => return all the matching child elements of specified elements
+        // $("#myDiv")
+        //   .find("#special")
+        //   .each(function () {
+        //     console.log(`Find Element: ${$(this).text()}`);
+        //   });
+        // next() => get the immediate following sibling of the specified element
+        // console.log($("#special").next().text());
+
+        // parent() => get the parent element of the specified element
+        // console.log($("#special").parent());
+
+        // siblings() => get all the siblings of the specified DOM element
+        console.log($("#special").siblings());
+      });
+    </script>
+  </body>
+</html>

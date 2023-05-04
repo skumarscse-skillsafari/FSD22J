@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Height and Width" />
+    <title>Height and Width</title>
+    <style>
+      #demo {
+        height: 200px;
+        width: 200px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Height and Width</h2>
+    <div id="demo"></div>
+    <p>This is a paragraph</p>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // height()
+        // width()
+        // height() => get or set the height of the specified DOM element
+        // $("#demo").height(); // returns 200
+        // $("p").height();
+        // $("#demo").height(100);
+        // width() => get or set the width of the specified DOM element
+        // $("#demo").width(); // return 200
+        // $("#demo").width(50);
+      });
+    </script>
+  </body>
+</html>
