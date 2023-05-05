@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Register" />
+    <title>Register</title>
+  </head>
+  <body>
+    <h1>Auth using Firebase</h1>
+    <h2>Registration Form</h2>
+    <form action="#" id="form" method="post">
+      <table>
+        <tr>
+          <td><label for="username">Username: </label></td>
+          <td>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter username"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter email"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="password">Password: </label></td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter password"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><button type="submit" id="submitBtn">Submit</button></td>
+          <td><button type="reset" id="clearBtn">Clear</button></td>
+        </tr>
+      </table>
+    </form>
+    <hr />
+    <p>Already Registerd? <a href="./signin.html"> Click here to Sign-In</a></p>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB10j0padcJNCrSuom26dvDCRvCrqpe6Hw",
+        authDomain: "fsd22j-firebase.firebaseapp.com",
+        projectId: "fsd22j-firebase",
+        storageBucket: "fsd22j-firebase.appspot.com",
+        messagingSenderId: "835463408800",
+        appId: "1:835463408800:web:1c91e97be5b41a65fdadc5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let form = document.querySelector("#form");
+
+      const auth = getAuth();
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let emailVal = form[1].value;
+        let passwordVal = form[2].value;
+        createUserWithEmailAndPassword(auth, emailVal, passwordVal)
+          .then((userDetail) => {
+            let user = userDetail.user;
+            console.log(user);
+          })
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>

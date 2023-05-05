@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Events" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h2>Events</h2>
+    <button id="btn">Click</button>
+    <button value="Click">Click</button>
+    <button value="Submit">Submit</button>
+    <button value="Reset">Reset</button>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Events
+      $(document).ready(function () {
+        // Form Events
+        // blur()
+        // change()
+        // focus()
+        // focusIn()
+        // select()
+        // submit()
+        // Keyboard Events
+        // keydown()
+        // keyup()
+        // keypress()
+        // focusout()
+        // Mouse Events
+        // click()
+        // dbclick()
+        // hover()
+        // mousedown()
+        // mouseover()
+        // Browser Events
+        // Error
+        // Resize
+        // Scroll
+        // Document load
+        // Load
+        // Ready
+        // Unload
+        // click()
+        // $("#btn").click(function (e) {
+        //   //   console.log("I am Clicked...");
+        //   console.log(e.currentTarget);
+        // });
+
+        // let btns = $("button");
+        // console.log(btns);
+
+        $("button").click(function () {
+          console.log(`Clicked Button: Value => ${this.value}`);
+        });
+      });
+    </script>
+  </body>
+</html>
