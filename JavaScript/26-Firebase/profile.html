@@ -21,5 +21,88 @@
       <input type="button" value="Edit" id="edit" />
       <input type="button" value="Delete" id="delete" />
     </p>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getAuth,
+        signOut,
+        deleteUser,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        onValue,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB10j0padcJNCrSuom26dvDCRvCrqpe6Hw",
+        authDomain: "fsd22j-firebase.firebaseapp.com",
+        projectId: "fsd22j-firebase",
+        storageBucket: "fsd22j-firebase.appspot.com",
+        messagingSenderId: "835463408800",
+        appId: "1:835463408800:web:1c91e97be5b41a65fdadc5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let form = document.querySelector("#form");
+
+      const auth = getAuth();
+      const db = getDatabase();
+      let username = document.querySelector("#username");
+      let displayName = document.querySelector("#displayName");
+      let logout = document.querySelector("#logout");
+      let edit = document.querySelector("#edit");
+      let deleteAcc = document.querySelector("#delete");
+
+      let urlParams = new URLSearchParams(location.search);
+      const [id] = urlParams.values();
+      console.log(id);
+      const userRef = ref(db, "users/" + id);
+      onValue(userRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+        username.textContent = data?.username;
+        displayName.value = data?.username;
+      });
+
+      logout.addEventListener("click", (e) => {
+        e.preventDefault();
+        signOut(auth).then(() => {
+          alert("Signed out successfully");
+          sessionStorage.removeItem(id);
+          window.location.href = "./signin.html";
+        });
+      });
+
+      edit.addEventListener("click", (e) => {
+        e.preventDefault();
+        let newData = {
+          uid: id,
+          username: displayName.value,
+        };
+
+        const updates = {};
+        updates["/users/" + id] = newData;
+        update(ref(db), updates);
+      });
+
+      deleteAcc.addEventListener("click", (e) => {
+        e.preventDefault();
+        const updates = {};
+        updates["/users/" + id] = null;
+        update(ref(db), updates);
+
+        const removeUser = auth?.currentUser;
+        console.log(removeUser);
+        deleteUser(removeUser).then(() => {
+          alert("User deleted successfully");
+          window.location.href = "./signin.html";
+        });
+      });
+    </script>
   </body>
 </html>

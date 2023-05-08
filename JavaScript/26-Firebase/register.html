@@ -63,6 +63,11 @@
         getAuth,
         createUserWithEmailAndPassword,
       } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
       const firebaseConfig = {
         apiKey: "AIzaSyB10j0padcJNCrSuom26dvDCRvCrqpe6Hw",
@@ -79,14 +84,22 @@
       let form = document.querySelector("#form");
 
       const auth = getAuth();
+      const db = getDatabase();
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        let username = form[0].value;
         let emailVal = form[1].value;
         let passwordVal = form[2].value;
         createUserWithEmailAndPassword(auth, emailVal, passwordVal)
           .then((userDetail) => {
             let user = userDetail.user;
             console.log(user);
+            set(ref(db, "users/" + user.uid), {
+              username: username,
+              email: emailVal,
+            });
+            alert("User added successfully");
+            window.location.href = "./signin.html";
           })
           .catch((err) => console.log(err));
       });

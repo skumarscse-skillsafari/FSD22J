@@ -46,5 +46,55 @@
     <p>
       Not yet Registered? <a href="./register.html"> Click here to register</a>
     </p>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB10j0padcJNCrSuom26dvDCRvCrqpe6Hw",
+        authDomain: "fsd22j-firebase.firebaseapp.com",
+        projectId: "fsd22j-firebase",
+        storageBucket: "fsd22j-firebase.appspot.com",
+        messagingSenderId: "835463408800",
+        appId: "1:835463408800:web:1c91e97be5b41a65fdadc5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      let form = document.querySelector("#form");
+
+      const auth = getAuth();
+      const db = getDatabase();
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let emailVal = form[0].value;
+        let passwordVal = form[1].value;
+        console.log(emailVal);
+        console.log(passwordVal);
+        signInWithEmailAndPassword(auth, emailVal, passwordVal)
+          .then((userDetail) => {
+            console.log(userDetail.user);
+            const userRef = ref(db, "users/" + userDetail.user.uid);
+            onValue(userRef, (snapshot) => {
+              const data = snapshot.val();
+              console.log(data);
+              alert("User logged-in successfully");
+              sessionStorage.setItem(userDetail.user.uid, userDetail.user.uid);
+            });
+            window.location.href = `./profile.html?uid=${userDetail.user.uid}`;
+          })
+          .catch((err) => console.log(err));
+      });
+    </script>
   </body>
 </html>
