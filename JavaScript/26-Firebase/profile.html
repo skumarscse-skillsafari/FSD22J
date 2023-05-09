@@ -92,16 +92,20 @@
 
       deleteAcc.addEventListener("click", (e) => {
         e.preventDefault();
-        const updates = {};
-        updates["/users/" + id] = null;
-        update(ref(db), updates);
+        let response = confirm("Do you really want to delete the user?");
+        if (response) {
+          const updates = {};
+          updates["/users/" + id] = null;
+          update(ref(db), updates);
 
-        const removeUser = auth?.currentUser;
-        console.log(removeUser);
-        deleteUser(removeUser).then(() => {
-          alert("User deleted successfully");
-          window.location.href = "./signin.html";
-        });
+          const removeUser = auth?.currentUser;
+          console.log(removeUser);
+          deleteUser(removeUser).then(() => {
+            sessionStorage.removeItem(id);
+            window.location.href = "./signin.html";
+            alert("User deleted successfully");
+          });
+        }
       });
     </script>
   </body>

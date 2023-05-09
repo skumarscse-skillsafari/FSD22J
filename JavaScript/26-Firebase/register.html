@@ -84,7 +84,7 @@
       let form = document.querySelector("#form");
 
       const auth = getAuth();
-      const db = getDatabase();
+      const db = getDatabase(app);
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         let username = form[0].value;
@@ -99,7 +99,9 @@
               email: emailVal,
             });
             alert("User added successfully");
-            window.location.href = "./signin.html";
+            setTimeout(() => {
+              window.location.href = "./signin.html";
+            }, 2000);
           })
           .catch((err) => console.log(err));
       });
