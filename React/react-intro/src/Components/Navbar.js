@@ -2,7 +2,7 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div>
+    <div className="nav">
       <ul className="list">
         <li>
           <a href="#">Home</a>
@@ -17,6 +17,7 @@ function Navbar() {
           <a href="#">Contact</a>
         </li>
       </ul>
+      <hr />
     </div>
   );
 }
