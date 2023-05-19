@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 const Nav = () => {
+  const container = {
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+  };
   return (
-    <ul>
+    <ul style={container}>
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -13,6 +18,9 @@ const Nav = () => {
       </li>
       <li>
         <Link to="/contact">Contact</Link>
+      </li>
+      <li>
+        <Link to="/products">Products</Link>
       </li>
     </ul>
   );

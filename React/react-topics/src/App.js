@@ -6,6 +6,9 @@ import Home from "./Components/React-Router-Dom/Home";
 import Nav from "./Components/React-Router-Dom/Nav";
 import Projects from "./Components/React-Router-Dom/Projects";
 import Error from "./Components/React-Router-Dom/Error";
+import Products from "./Components/React-Router-Dom/Products";
+import Product from "./Components/React-Router-Dom/Product";
+import SharedComponent from "./Components/React-Router-Dom/SharedComponent";
 // import User from "./Components/Conditional-Rendering/User";
 // import StyleComponent from "./Components/Style-Component/StyleComponent";
 // import ProductCard from "./Components/Wrapper-Component/ProductCard";
@@ -39,6 +42,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<SharedComponent />}>
+            <Route index element={<Products />} />
+            <Route path=":productID" element={<Product />} />
+          </Route>
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
