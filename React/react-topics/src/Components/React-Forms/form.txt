@@ -1,0 +1,3 @@
+Types
+1. Controlled Component => connect with the state variable
+2. Uncontrolled Componnet

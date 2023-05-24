@@ -1,14 +1,15 @@
 // import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./Components/React-Router-Dom/About";
-import Contact from "./Components/React-Router-Dom/Contact";
-import Home from "./Components/React-Router-Dom/Home";
-import Nav from "./Components/React-Router-Dom/Nav";
-import Projects from "./Components/React-Router-Dom/Projects";
-import Error from "./Components/React-Router-Dom/Error";
-import Products from "./Components/React-Router-Dom/Products";
-import Product from "./Components/React-Router-Dom/Product";
-import SharedComponent from "./Components/React-Router-Dom/SharedComponent";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import About from "./Components/React-Router-Dom/About";
+// import Contact from "./Components/React-Router-Dom/Contact";
+// import Home from "./Components/React-Router-Dom/Home";
+// import Nav from "./Components/React-Router-Dom/Nav";
+// import Projects from "./Components/React-Router-Dom/Projects";
+// import Error from "./Components/React-Router-Dom/Error";
+// import Products from "./Components/React-Router-Dom/Products";
+// import Product from "./Components/React-Router-Dom/Product";
+// import SharedComponent from "./Components/React-Router-Dom/SharedComponent";
+import Form from "./Components/React-Forms/Form";
 // import User from "./Components/Conditional-Rendering/User";
 // import StyleComponent from "./Components/Style-Component/StyleComponent";
 // import ProductCard from "./Components/Wrapper-Component/ProductCard";
@@ -35,7 +36,7 @@ function App() {
         return <ProductCard key={product.id} product={product} />;
       })} */}
       {/* <User /> */}
-      <Router>
+      {/* <Router>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -48,7 +49,8 @@ function App() {
           </Route>
           <Route path="*" element={<Error />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <Form />
     </div>
   );
 }
