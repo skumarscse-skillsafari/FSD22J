@@ -5,7 +5,7 @@ const Form = () => {
     username: "",
     email: "",
     password: "",
-    hobbies: ["", "", ""],
+    hobbies: [],
     address: "",
     isAdmin: "",
     selectSubject: "",
@@ -13,13 +13,24 @@ const Form = () => {
   });
 
   const handleForm = (e) => {
-    const { name, value } = e.target;
-    setFormFields((prevVal) => {
-      return {
-        ...prevVal,
-        [name]: value,
-      };
-    });
+    if (e.target.type === "checkbox") {
+      let data = formFields.hobbies;
+      data.push(e.target.value);
+      setFormFields((form) => {
+        return {
+          ...form,
+          hobbies: data,
+        };
+      });
+    } else {
+      const { name, value } = e.target;
+      setFormFields((prevVal) => {
+        return {
+          ...prevVal,
+          [name]: value,
+        };
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -66,30 +77,20 @@ const Form = () => {
             onChange={handleForm}
           />
         </p>
-        <p> Hobbies:</p>
+        <p>
+          <strong>Hobbies:</strong>
+        </p>
         <p>
           <label>
-            <input
-              type="checkbox"
-              name="cricket"
-              value={formFields.hobbies[0]}
-            />
+            <input type="checkbox" value="cricket" onChange={handleForm} />
             Cricket
           </label>
           <label>
-            <input
-              type="checkbox"
-              name="football"
-              value={formFields.hobbies[1]}
-            />
+            <input type="checkbox" value="football" onChange={handleForm} />
             Football
           </label>
           <label>
-            <input
-              type="checkbox"
-              name="newspaper"
-              value={formFields.hobbies[2]}
-            />
+            <input type="checkbox" value="newspaper" onChange={handleForm} />
             Newspaper
           </label>
         </p>
@@ -97,18 +98,22 @@ const Form = () => {
           <textarea
             value={formFields.address}
             placeholder="Enter address"
+            name="address"
             cols={22}
             rows={3}
             onChange={handleForm}
           ></textarea>
         </p>
-        <p>isAdmin:</p>
+        <p>
+          <strong>isAdmin:</strong>
+        </p>
         <p>
           <label>
             <input
               type="radio"
               name="isAdmin"
-              value={formFields.isAdmin}
+              value="Yes"
+              checked={formFields.isAdmin === "Yes"} // false
               onChange={handleForm}
             />
             Yes
@@ -117,26 +122,32 @@ const Form = () => {
             <input
               type="radio"
               name="isAdmin"
-              value={formFields.isAdmin}
+              value="No"
+              checked={formFields.isAdmin === "No"} // false
               onChange={handleForm}
             />
             No
           </label>
         </p>
-        <p>Select Subjects</p>
+        <p>
+          <strong>Select Subjects:</strong>
+        </p>
         <p>
           <select
-            name="subjects"
             value={formFields.selectSubject}
             onChange={handleForm}
+            name="selectSubject"
           >
-            <option>English</option>
-            <option>Maths</option>
-            <option>Physics</option>
-            <option>Chemistry</option>
+            <option value="">---Select Subject---</option>
+            <option value="English">English</option>
+            <option value="Maths">Maths</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
           </select>
         </p>
-        <p>Upload File:</p>
+        <p>
+          <strong>Upload File:</strong>
+        </p>
         <p>
           <input type="file" />
         </p>
