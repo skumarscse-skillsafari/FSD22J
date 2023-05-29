@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import FileBase from "react-file-base64";
 const Form = () => {
   const [formFields, setFormFields] = useState({
     username: "",
@@ -11,6 +11,8 @@ const Form = () => {
     selectSubject: "",
     fileUploads: "",
   });
+
+  const [data, setData] = useState(false);
 
   const handleForm = (e) => {
     if (e.target.type === "checkbox") {
@@ -36,6 +38,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formFields);
+    setData(true);
   };
 
   const clearForm = (e) => {
@@ -149,13 +152,33 @@ const Form = () => {
           <strong>Upload File:</strong>
         </p>
         <p>
-          <input type="file" />
+          <FileBase
+            type="file"
+            multiple={false}
+            onDone={({ base64 }) =>
+              setFormFields({ ...formFields, fileUploads: base64 })
+            }
+          />
         </p>
         <p>
           <input type="submit" value="Submit" /> {"   "}
           <input type="reset" value="Clear" onClick={clearForm} />
         </p>
       </form>
+      <hr />
+      {data && (
+        <div>
+          <p>Username: {formFields.username}</p>
+          <p>Email: {formFields.email}</p>
+          <p>Hobbies: {formFields.hobbies.join(", ")}</p>
+          <p>Address: {formFields.address}</p>
+          <p>isAdmin: {formFields.isAdmin}</p>
+          <p>Selected Subject: {formFields.selectSubject}</p>
+          <p>
+            <img src={formFields.fileUploads} height={100} width={100} />
+          </p>
+        </div>
+      )}
     </>
   );
 };

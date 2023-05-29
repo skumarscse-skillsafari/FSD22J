@@ -10,6 +10,8 @@
 // import Product from "./Components/React-Router-Dom/Product";
 // import SharedComponent from "./Components/React-Router-Dom/SharedComponent";
 import Form from "./Components/React-Forms/Form";
+import UseReducer from "./Components/UseReducer/UseReducer";
+import UseReducer1 from "./Components/UseReducer/UseReducer1";
 // import User from "./Components/Conditional-Rendering/User";
 // import StyleComponent from "./Components/Style-Component/StyleComponent";
 // import ProductCard from "./Components/Wrapper-Component/ProductCard";
@@ -50,7 +52,9 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router> */}
-      <Form />
+      {/* <Form /> */}
+      {/* <UseReducer /> */}
+      <UseReducer1 />
     </div>
   );
 }
