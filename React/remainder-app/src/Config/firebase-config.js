@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAob0X0xW7YIb4xxZelAoZ17AQjryWoV9s",
-  authDomain: "fsd22j.firebaseapp.com",
-  projectId: "fsd22j",
-  storageBucket: "fsd22j.appspot.com",
-  messagingSenderId: "337565119927",
-  appId: "1:337565119927:web:cc6a83b4e009db9cd1a432",
+  apiKey: "AIzaSyAPniWMWHyIPNWTcrM7SHwZ9HzaMgy8vNA",
+  authDomain: "remainder-app-3790e.firebaseapp.com",
+  projectId: "remainder-app-3790e",
+  storageBucket: "remainder-app-3790e.appspot.com",
+  messagingSenderId: "801497447573",
+  appId: "1:801497447573:web:83ee0b6f8437ba8929af9c",
 };
 
 // Initialize Firebase

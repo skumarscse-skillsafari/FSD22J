@@ -1,28 +1,60 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  doc,
+  addDoc,
+  collection,
+  serverTimestamp,
+  getDocs,
+  deleteDoc,
+} from "firebase/firestore";
+import { db } from "../Config/firebase-config";
 import EditRemainder from "./EditRemainder";
 const Remainder = () => {
   const [createRemainder, setCreateRemainder] = useState("");
-  const [remainders, setRemainders] = useState([
-    {
-      id: 1001,
-      remainder: "HTML",
-      isChecked: false,
-      timestamp: "12-11-2023",
-    },
-    {
-      id: 1002,
-      remainder: "CSS",
-      isChecked: true,
-      timestamp: "13-01-2023",
-    },
-    {
-      id: 1003,
-      remainder: "JavaScript",
-      isChecked: false,
-      timestamp: "24-05-2023",
-    },
-  ]);
-  const [isChecked, setisChecked] = useState(true);
+  const [remainders, setRemainders] = useState([]);
+
+  useEffect(() => {
+    const getRemainders = async () => {
+      const remainderSnapshot = await getDocs(
+        collection(db, "remainderCollection")
+      );
+      console.log(remainderSnapshot);
+      let remainderData = remainderSnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setRemainders(remainderData);
+    };
+
+    getRemainders();
+  }, []);
+
+  const submitRemainder = async (e) => {
+    e.preventDefault();
+    try {
+      await addDoc(collection(db, "remainderCollection"), {
+        remainder: createRemainder,
+        isChecked: false,
+        timestamp: serverTimestamp(),
+      });
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteRemainder = async (id) => {
+    try {
+      if (window.confirm("Are you sure to delete this remainder?")) {
+        const docRef = doc(db, "remainderCollection", id);
+        // console.log(docRef);
+        await deleteDoc(docRef);
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -57,7 +89,9 @@ const Remainder = () => {
                           </span>
                         </div>{" "}
                         {remainder} <br />
-                        <i>{timestamp}</i>
+                        <i>
+                          {new Date(timestamp.seconds * 1000).toLocaleString()}
+                        </i>
                       </span>
                       <span className="float-end mx-3">
                         <EditRemainder editRemainder={remainder} id={id} />
@@ -65,7 +99,9 @@ const Remainder = () => {
                       <button
                         type="button"
                         className="btn btn-danger float-end"
-                        onClick={() => {}}
+                        onClick={() => {
+                          deleteRemainder(id);
+                        }}
                       >
                         Delete
                       </button>
@@ -109,7 +145,11 @@ const Remainder = () => {
                         >
                           Close
                         </button>
-                        <button type="button" className="btn btn-primary">
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={submitRemainder}
+                        >
                           Create Remainder
                         </button>
                       </div>
