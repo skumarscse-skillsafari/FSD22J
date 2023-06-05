@@ -1,3 +1,4 @@
+import "./App.css";
 import Remainder from "./Components/Remainder";
 
 function App() {
