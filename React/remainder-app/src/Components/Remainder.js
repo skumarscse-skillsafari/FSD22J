@@ -71,6 +71,7 @@ const Remainder = () => {
         isChecked: !state[indexToUpdate].isChecked,
       });
       console.log(newState);
+      setRemainders(newState);
       return newState;
     });
     try {
@@ -86,7 +87,9 @@ const Remainder = () => {
         });
         console.log("Updation performed successfully");
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
