@@ -14,21 +14,11 @@ const Context = ({ children }) => {
     quickDelivery: faker.datatype.boolean(),
     ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
   }));
-  console.log(products);
+  // console.log(products);
 
   const [state, dispatch] = useReducer(cartReducer, {
     products: products,
-    cart: [
-      {
-        id: "ab7ddb0b-c39f-4490-98fd-06c4ba6775e9",
-        image: "https://loremflickr.com/640/480/abstract?lock=5651399671021568",
-        inStock: 0,
-        name: "Fantastic Frozen Gloves",
-        price: "525",
-        quickDelivery: false,
-        ratings: 5,
-      },
-    ],
+    cart: [],
   });
 
   const [productState, productDispatch] = useReducer(productReducer, {

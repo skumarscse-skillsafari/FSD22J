@@ -6,6 +6,7 @@ const Home = () => {
     state: { products },
     productState: { byQuickDelivery, byRating, byStock, searchQuery },
   } = CartState();
+  // console.log(CartState());
 
   const transformProducts = () => {
     let sortedProducts = products;

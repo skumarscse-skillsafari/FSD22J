@@ -7,7 +7,7 @@ const SingleProduct = ({ prod }) => {
     state: { cart },
     dispatch,
   } = CartState();
-  console.log(cart);
+  // console.log(cart);
   return (
     <div className="products">
       <Card>
@@ -23,33 +23,30 @@ const SingleProduct = ({ prod }) => {
             )}
             <Rating rating={prod.rating} />
           </Card.Subtitle>
-
-          {cart.some((p) =>
-            p.id === prod.id ? (
-              <Button
-                variant="danger"
-                onClick={() =>
-                  dispatch({
-                    type: "REMOVE_FROM_CART",
-                    payload: prod,
-                  })
-                }
-              >
-                Remove from Cart
-              </Button>
-            ) : (
-              <Button
-                variant="primary"
-                onClick={() =>
-                  dispatch({
-                    type: "ADD_TO_CART",
-                    payload: prod,
-                  })
-                }
-              >
-                Add to Cart
-              </Button>
-            )
+          {cart.some((p) => p.id === prod.id) ? (
+            <Button
+              variant="danger"
+              onClick={() =>
+                dispatch({
+                  type: "REMOVE_FROM_CART",
+                  payload: prod,
+                })
+              }
+            >
+              Remove from Cart
+            </Button>
+          ) : (
+            <Button
+              variant="primary"
+              onClick={() =>
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: prod,
+                })
+              }
+            >
+              Add to Cart
+            </Button>
           )}
         </Card.Body>
       </Card>
