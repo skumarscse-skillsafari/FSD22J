@@ -22,7 +22,7 @@ const Context = ({ children }) => {
   });
 
   const [productState, productDispatch] = useReducer(productReducer, {
-    byStock: "",
+    byStock: false,
     byQuickDelivery: false,
     byRating: 0,
     searchQuery: "",

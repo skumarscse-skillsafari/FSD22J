@@ -21,7 +21,7 @@ const SingleProduct = ({ prod }) => {
             ) : (
               <div>Standard Delivery</div>
             )}
-            <Rating rating={prod.rating} />
+            <Rating rating={prod.ratings} />
           </Card.Subtitle>
           {cart.some((p) => p.id === prod.id) ? (
             <Button
